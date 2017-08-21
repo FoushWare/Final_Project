@@ -8,7 +8,11 @@ And Generate**QR** form this user
 
 * credit: => Table that have  **id** for the user ,card Number for purchasing from our store
 * login : in our store  => there will be camera 1
-..*This camera job is  1-check face [..phase one..] 2-check user QR [..phase two ..]
+
+..*This camera job is 
+
+1. check face [..phase one..] 
+2. check user QR [..phase two ..]
 
 * shopping
   ==========
