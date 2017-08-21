@@ -11,8 +11,7 @@ And Generate**QR** form this user
 ..*This camera job is  1-check face [..phase one..] 2-check user QR [..phase two ..]
 
 * shopping
-
-=========
+  ==========
 
 1. tracking item on shelf [..camera 2..]
 2. tracking customer [..camera 3 ..] and sync with camera 2
