@@ -1,7 +1,7 @@
 # Final_Project
 final_project_tracking to track every thing in the project and our progress
 
-#user stories
+# user stories
 * registration  -> **Download our app** this app will use the user mobile camera to get his **face**
 And Generate**QR** form this user
 
