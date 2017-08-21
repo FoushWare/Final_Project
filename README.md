@@ -1,6 +1,7 @@
 # Final_Project
 final_project_tracking to track every thing in the project and our progress
 
+![picture alt](https://cdn.geekwire.com/wp-content/uploads/2016/12/3-3-1-630x730.png)
 # user stories
 * registration  -> **Download our app** this app will use the user mobile camera to get his **face**
 And Generate**QR** form this user
