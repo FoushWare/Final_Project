@@ -16,5 +16,5 @@ And Generate**QR** form this user
 1. tracking item on shelf [..camera 2..]
 2. tracking customer [..camera 3 ..] and sync with camera 2
 3. if the bill of the user exceed his money stored in the app ..Then .. we will give him a limited money to continue buying items and he/she will give them again later
-4- Exit gate ... there will be exit gate to check out the user
+4. Exit gate ... there will be exit gate to check out the user
 
