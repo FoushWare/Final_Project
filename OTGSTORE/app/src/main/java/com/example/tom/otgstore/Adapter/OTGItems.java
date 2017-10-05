@@ -4,16 +4,16 @@ package com.example.tom.otgstore.Adapter;
  * Created by fouad on 10/4/17.
  */
 
-public class OTGitems {
+public class OTGItems {
    //the content of the item
    private String name;
    private String quantity;
    private String price;
    private String photoUrl;
   //constructor
-   public OTGitems(){}
+   public OTGItems(){}
    //constructor to build the item content
-   public OTGitems(String name, String quantity,String price, String photoUrl){
+   public OTGItems(String name, String quantity,String price, String photoUrl){
        this.name=name;
        this.quantity=quantity;
        this.price=price;

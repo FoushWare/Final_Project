@@ -6,5 +6,5 @@ package com.example.tom.otgstore.firebase;
 
 /** There we will manage using notifications
  * */
-public class otgMessagingService {
+public class MessagingService {
 }

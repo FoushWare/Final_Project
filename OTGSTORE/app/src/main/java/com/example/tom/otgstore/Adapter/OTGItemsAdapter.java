@@ -19,8 +19,8 @@ import java.util.List;
  * Created by fouad on 10/4/17.
  */
 
-public class OTGItemsAdapter extends ArrayAdapter<OTGitems> {
-    public OTGItemsAdapter(Context context,int resource, List<OTGitems> objects) {
+public class OTGItemsAdapter extends ArrayAdapter<OTGItems> {
+    public OTGItemsAdapter(Context context,int resource, List<OTGItems> objects) {
         super(context, resource,objects);
     }
 
@@ -40,7 +40,7 @@ public class OTGItemsAdapter extends ArrayAdapter<OTGitems> {
 
 
        //get the position of the item when clicking on it and  with it we can get every thing related to this item
-        OTGitems item=getItem(position);
+        OTGItems item=getItem(position);
 
         //check if the item has photo in the db or not
 

@@ -33,10 +33,13 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:11.4.0';
     //firebase cloud Messaging
     compile 'com.google.firebase:firebase-messaging:11.4.0'
+    //Storage firebase
+    compile 'com.google.firebase:firebase-storage:11.4.0'
     //FirebaseUi
     compile 'com.google.android.gms:play-services-auth:11.4.0'
     compile 'com.android.support:customtabs:26.0.0'
     compile 'com.firebaseui:firebase-ui:2.3.0'
+    compile 'com.firebaseui:firebase-ui-auth:2.3.0'
     //glide image loading and caching library
     compile 'com.github.bumptech.glide:glide:4.2.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'

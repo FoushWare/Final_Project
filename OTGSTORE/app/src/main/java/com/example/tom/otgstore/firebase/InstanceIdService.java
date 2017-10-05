@@ -13,9 +13,9 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
  * Listens for changes in the InstanceID
  */
 
-public class OtgStoreInstanceIdService extends FirebaseInstanceIdService {
+public class InstanceIdService  extends FirebaseInstanceIdService {
     //just for logging  in the android Monitor
-    private static String LOG_TAG=OtgStoreInstanceIdService.class.getSimpleName();
+    private static String LOG_TAG=InstanceIdService.class.getSimpleName();
     /**
      * Called if InstanceID token is updated. This may occur if the security of
      * the previous token had been compromised. Note that this is called when the InstanceID token

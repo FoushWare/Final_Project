@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import com.example.tom.otgstore.Adapter.OTGItemsAdapter;
-import com.example.tom.otgstore.Adapter.OTGitems;
+import com.example.tom.otgstore.Adapter.OTGItems;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
 public class TransactionsActivity extends AppCompatActivity {
 
     private ListView mItemsListView;
-    private OTGItemsAdapter mOTGItemsAdapter;
+    public OTGItemsAdapter OTGItemsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +23,9 @@ public class TransactionsActivity extends AppCompatActivity {
         mItemsListView=(ListView)findViewById(R.id.list);
 
         //initialize items listView and its adapter
-        List<OTGitems> otGitemses= new ArrayList<>();
-        mOTGItemsAdapter= new OTGItemsAdapter(this,R.layout.list_item,otGitemses);
-        mItemsListView.setAdapter(mOTGItemsAdapter);
+        List<OTGItems> otGitemses= new ArrayList<>();
+        OTGItemsAdapter= new OTGItemsAdapter(this,R.layout.list_item,otGitemses);
+        mItemsListView.setAdapter(OTGItemsAdapter);
 
     }
 }
