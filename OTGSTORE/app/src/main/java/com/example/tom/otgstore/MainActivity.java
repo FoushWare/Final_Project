@@ -8,17 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.tom.otgstore.Adapter.OTGItems;
-import com.example.tom.otgstore.Adapter.OTGItemsAdapter;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.Arrays;
 /**
@@ -38,17 +30,10 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int RC_SIGN_IN = 111;
-    public static OTGItemsAdapter mOTGItemAdapter;
 
     //Firebase instance variables
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
-    private ChildEventListener mChildEventListener;
-    private DatabaseReference mItemsDatabaseReference;
-    private DatabaseReference mUsersDatabaseReference;
-    private FirebaseDatabase mFirebaseDatabase;
-    private FirebaseStorage mFirebaseStorage;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button HistoryButton = (Button) findViewById(R.id.buttonHistory);
         Button SignOutButton = (Button) findViewById(R.id.buttonSignOut);
         Button ShoppingButton = (Button) findViewById(R.id.buttonShopping);
-
-
         //set listeners for the buttons
         ProfileButton.setOnClickListener((View.OnClickListener) this);
         BalanceButton.setOnClickListener((View.OnClickListener) this);
@@ -70,15 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ShoppingButton.setOnClickListener((View.OnClickListener) this);
 
         //Initialize Firebase components
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mFirebaseStorage = FirebaseStorage.getInstance();
         mFirebaseAuth = FirebaseAuth.getInstance();
-
-        //get Reference to the database [node] called ( items ) for the items and one for the users
-        mItemsDatabaseReference = mFirebaseDatabase.getReference().child("items"); //this is like table items
-        //get Reference to the database [node] called ( users ) for the users of the item
-        mUsersDatabaseReference = mFirebaseDatabase.getReference().child("users"); //this is like table items
-
 
         //the listener of the firebase to launch FirebaseUi singing if the user not logged in
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -93,10 +68,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (user != null) {
                     // User is signed in
                     Toast.makeText(MainActivity.this, "You're now signed in. Welcome to OTG Store.", Toast.LENGTH_SHORT).show();
-                    onSignedInInitialize();
                 } else {
                     //User is signed out
-                    onSignedOutCleanup();
+                    //onSignedOutCleanup();
                     startActivityForResult(
                             AuthUI.getInstance()
                                     .createSignInIntentBuilder()
@@ -113,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
 
-
     }//End of onCreate
 
     //Implement onActivityResult for cancelled FirebaseUI Auth
@@ -129,55 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
             }
         }
-    }
-
-    private void onSignedOutCleanup() {
-        if(mOTGItemAdapter != null){ mOTGItemAdapter.clear();}
-        detachDatabaseListener();
-
-    }
-
-    private void detachDatabaseListener() {
-        if (mChildEventListener != null) {
-            mItemsDatabaseReference.removeEventListener(mChildEventListener);
-            mChildEventListener = null;
-        }
-    }
-
-    private void onSignedInInitialize() {
-        attachDatabaseReadListener();
-        if (mChildEventListener == null) {
-            mChildEventListener = new ChildEventListener() {
-                @Override
-                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    //when child added to item node in the firebase
-                    //get the item content in the form specified in the OTGItems class [name,quantity,price,photoUrl]
-                    OTGItems otgItems = dataSnapshot.getValue(OTGItems.class);
-                    mOTGItemAdapter.add(otgItems);
-
-                }
-
-                @Override
-                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                }
-
-                @Override
-                public void onChildRemoved(DataSnapshot dataSnapshot) {
-                }
-
-                @Override
-                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                }
-            };
-
-        }
-    }
-
-    private void attachDatabaseReadListener() {
     }
 
 
@@ -212,8 +136,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
         }
-
-
     }
 
     @Override
@@ -227,12 +149,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (mAuthStateListener != null) {
             mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
         }
-        //clean the adapter
-        if(mOTGItemAdapter !=null) {
-            mOTGItemAdapter.clear();
-        }
-        detachDatabaseListener();
-
     }
 
 }

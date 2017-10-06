@@ -6,7 +6,7 @@
     android:descendantFocusability="blocksDescendants"
     android:focusable="false"
     android:orientation="horizontal"
-    android:paddingTop="8dp">
+    android:paddingTop="16dp">
 
     <ImageView
         android:id="@+id/catalog_item_image"

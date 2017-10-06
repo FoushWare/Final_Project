@@ -15,4 +15,7 @@
     <string name="price">Price</string>
     <string name="item_quantity">quantity</string>
     <string name="shopping">Shopping</string>
+    <string name="testphoto">testPhoto</string>
+    <string name="testtext">testtext</string>
+    <string name="send_button_label">send</string>
 </resources>
