@@ -21,6 +21,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.Arrays;
+/**
+ *In this class there will be
+ *
+ *1-login to the App using firebaseUi [to Authonticate acess to the database and our app]
+ *  we want if the user first sign up to the app redirect him/her to the sign up activity to
+ *  generate QR code for him/her and if he signed in Rediredt to the MainActivty which will have QR floating button
+ *  of him/her
+ *2-There are  buttons to redirect to our Acivities [Balance,History,Profile,Transactions]
+ *3-make the database of Firebase with two nodes[tables] (users,items)
+ *4-make listener to listen to the database if there is new child added and detach this listener on pause
+ *5-performing signOut of the app  but there is a bug with sign in again it close the app but after click on it
+ *  there is no error
+ * */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -70,13 +83,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //the listener of the firebase to launch FirebaseUi singing if the user not logged in
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
 
+            /**
+             * The sign in operation using FirebaseUi
+             * */
+
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
                     Toast.makeText(MainActivity.this, "You're now signed in. Welcome to OTG Store.", Toast.LENGTH_SHORT).show();
-                    onSignedInInitialize(user.getDisplayName());
+                    onSignedInInitialize();
                 } else {
                     //User is signed out
                     onSignedOutCleanup();
@@ -127,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void onSignedInInitialize(String displayName) {
+    private void onSignedInInitialize() {
         attachDatabaseReadListener();
         if (mChildEventListener == null) {
             mChildEventListener = new ChildEventListener() {
@@ -188,8 +205,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonSignOut:
                 //make sign out not implemented yet
                 //there is a problem the activty closed after sign in i'll figure it later
-                //FirebaseAuth.getInstance().signOut();
-                //finish();
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                break;
+            default:
                 break;
 
         }
@@ -202,7 +221,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
-/*
     @Override
     protected void onPause() {
         super.onPause();
@@ -210,9 +228,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
         }
         //clean the adapter
-        mOTGItemAdapter.clear();
+        if(mOTGItemAdapter !=null) {
+            mOTGItemAdapter.clear();
+        }
+        detachDatabaseListener();
 
     }
-*/
 
 }

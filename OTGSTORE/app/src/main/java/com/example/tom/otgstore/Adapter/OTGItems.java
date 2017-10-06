@@ -4,6 +4,13 @@ package com.example.tom.otgstore.Adapter;
  * Created by fouad on 10/4/17.
  */
 
+/**
+ *There we gather the item contents in one class to utilize this in the MainActivity
+ * when we make listener to the database and get back the new child add
+ * and sent it to the adapter
+ * to display it
+ * */
+
 public class OTGItems {
    //the content of the item
    private String name;

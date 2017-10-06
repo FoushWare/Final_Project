@@ -9,6 +9,11 @@ import com.example.tom.otgstore.Adapter.OTGItems;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ *There we will show the user everything he/she buy in the realtime
+ * i made adapter for this
+ *
+ * */
 
 public class TransactionsActivity extends AppCompatActivity {
 
