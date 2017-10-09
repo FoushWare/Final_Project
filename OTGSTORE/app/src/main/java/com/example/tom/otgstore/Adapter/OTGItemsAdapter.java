@@ -49,7 +49,17 @@ public class OTGItemsAdapter extends ArrayAdapter<OTGItems> {
            Glide.with(photoImageView.getContext())
                    .load(item.getPhotoUrl())
                    .into(photoImageView);
-       }//else there will be will be a placeholder image of the item
+           name.setText(item.getName());
+           price.setText(item.getPrice());
+           quantity.setText(item.getQuantity());
+       }//else there will be will be a placeholder image of the item and the all text
+        else{
+           //photoImageView.setVisibility(View.GONE);
+           name.setText(item.getName());
+           price.setText(item.getPrice());
+           quantity.setText(item.getQuantity());
+
+       }
 
         return convertView;
     }//End of getView method
