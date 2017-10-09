@@ -39,14 +39,14 @@
         <EditText
             android:id="@+id/quantityEditText"
             android:layout_width="0dp"
-            android:hint="price"
+            android:hint="quantity"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1" />
         <EditText
             android:id="@+id/priceEditText"
             android:layout_width="0dp"
-            android:hint="quantity"
+            android:hint="Price"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1" />
