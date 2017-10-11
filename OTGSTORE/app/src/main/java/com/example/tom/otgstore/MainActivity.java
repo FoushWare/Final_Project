@@ -21,8 +21,7 @@ import java.util.Arrays;
  *  generate QR code for him/her and if he signed in Rediredt to the MainActivty which will have QR floating button
  *  of him/her
  *2-There are  buttons to redirect to our Acivities [Balance,History,Profile,Transactions]
- *3-make the database of Firebase with two nodes[tables] (users,items)
- *4-make listener to listen to the database if there is new child added and detach this listener on pause
+
  *5-performing signOut of the app  but there is a bug with sign in again it close the app but after click on it
  *  there is no error
  * */
@@ -89,6 +88,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }//End of onCreate
 
+
+
     //Implement onActivityResult for cancelled FirebaseUI Auth
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -138,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+//This part related to firebase Ui
     @Override
     protected void onResume() {
         super.onResume();

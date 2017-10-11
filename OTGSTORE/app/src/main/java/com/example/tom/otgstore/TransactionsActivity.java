@@ -29,6 +29,9 @@ import java.util.List;
 /**
  * There we will show the user everything he/she buy in the realtime
  * i made adapter for this
+ * There in this class
+ * 1-make the database of Firebase with two nodes[tables] (users,items)
+ * 2-make listener to listen to the database if there is new child added and detach this listener on pause
  */
 
 public class TransactionsActivity extends AppCompatActivity {
