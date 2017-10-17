@@ -25,14 +25,40 @@
             />
 
         <EditText
+            android:id="@+id/usertxt"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:hint="Foush"
+            android:inputType="textPersonName"
+            android:hint="enter full name"
             />
 
     </LinearLayout>
     <!--current balance-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:text="@string/mail"
+            android:textColor="@color/Black" />
+
+        <EditText
+            android:id="@+id/mailtxt"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="enter valid email" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -44,34 +70,61 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:textAppearance="?android:textAppearanceSmall"
-            android:text="@string/username"
-            android:textColor="@color/Black"
-            />
+            android:text="@string/password"
+            android:textColor="@color/Black" />
 
         <EditText
+            android:id="@+id/passwordtxt"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:hint="lionmoon60"
-            />
+            android:inputType="textPassword"
+            android:hint="at least 8 characters " />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-<View
-    android:layout_width="0dp"
-    android:layout_weight="1"
-    android:layout_height="0dp"/>
-        <Button
-            android:id="@+id/button2"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        >
+        <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-           android:layout_marginRight="96dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:text="Take Photo" />
+            android:textAppearance="?android:textAppearanceSmall"
+            android:text="@string/phone"
+            android:textColor="@color/Black" />
+
+        <EditText
+            android:id="@+id/phonetxt"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:hint="01*********" />
+
+
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="normal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="cameraClick"
+            android:src="@android:drawable/ic_menu_camera"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

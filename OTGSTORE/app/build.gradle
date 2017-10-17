@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
+
+    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "com.example.tom.otgstore"
         minSdkVersion 19
@@ -24,24 +27,25 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile 'junit:junit:4.12'
+    //Realtime dependence Database
+    //Authentication firebase
+    //firebase cloud Messaging
+    //Storage firebase
+    //FirebaseUi
+    //glide image loading and caching library
     compile 'com.android.support:design:26.0.0'
     compile 'com.android.support:appcompat-v7:26.0.0'
-    //Realtime dependence Database
     compile 'com.google.firebase:firebase-database:11.4.0'
-    //Authentication firebase
-    compile 'com.google.firebase:firebase-auth:11.4.0';
-    //firebase cloud Messaging
+    compile 'com.google.firebase:firebase-auth:11.4.0'
     compile 'com.google.firebase:firebase-messaging:11.4.0'
-    //Storage firebase
     compile 'com.google.firebase:firebase-storage:11.4.0'
-    //FirebaseUi
     compile 'com.google.android.gms:play-services-auth:11.4.0'
     compile 'com.android.support:customtabs:26.0.0'
     compile 'com.firebaseui:firebase-ui:2.3.0'
     compile 'com.firebaseui:firebase-ui-auth:2.3.0'
-    //glide image loading and caching library
     compile 'com.github.bumptech.glide:glide:4.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
 }
 // Apply the Google Services plugin. Make sure to add the google-services.json file in the app
