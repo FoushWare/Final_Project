@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// API
+Route::post('/api/v1/users/signin','apiUsersController@signin');
+Route::post('/api/v1/users/signup','apiUsersController@signup');
+Route::post('/api/v1/users/credits','apiUsersController@addCredits');
+
+//TEST
+
+
+Route::get('/test','apiUsersController@test');
+Route::post('/test','apiUsersController@test');
