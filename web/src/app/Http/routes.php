@@ -15,11 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login','usersController@login');
-
-
 // API
-Route::get('/api/v1/users/login','apiUsersController@login');
-Route::get('/api/v1/users/signup','apiUsersController@signup');
-Route::get('/api/v1/users/credits','apiUsersController@addCredits');
+Route::post('/api/v1/users/signin','apiUsersController@signin');
+Route::post('/api/v1/users/signup','apiUsersController@signup');
+Route::post('/api/v1/users/credits','apiUsersController@addCredits');
 
+//TEST
+
+
+Route::get('/test','apiUsersController@test');
+Route::post('/test','apiUsersController@test');
