@@ -73,13 +73,13 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(String... arg) {
             // TODO Auto-generated method stub
-            String name = arg[0];
+            String email = arg[0];
             String password = arg[1];
 
 
             // Preparing post params
             List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("name", name));
+            params.add(new BasicNameValuePair("email", email));
             params.add(new BasicNameValuePair("password", password));
 
             ServiceHandler serviceClient = new ServiceHandler();
