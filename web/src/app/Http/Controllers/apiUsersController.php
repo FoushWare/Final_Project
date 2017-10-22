@@ -25,13 +25,23 @@ class apiUsersController extends Controller{
 
     public function signin(Request $request){
 
+       
+        if(!isset($request->email)){
+            return  response()->json(['msg' => "Email Required",'error'=>'1'], 401);
+
+        }
+        if(!isset($request->password)){
+            return  response()->json(['msg' => "password Required",'error'=>'1'], 401);
+
+        }
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        $credentials = $request->only('email', 'password');
-
+//        $credentials = $request->only('email', 'password');
+        $credentials = ["email"=>$request->email,"password"=>$request->password];
         try {
             if (!$token = JWTAuth::attempt($credentials)) {
                 return response()->json(['msg' => "Invalid Auth","error"=>'1'], 401);
@@ -40,8 +50,10 @@ class apiUsersController extends Controller{
             return response()->json(['msg' => "Could not create token","error"=>'1'], 500);
         }
 
-        return response()->json(['token' => $token,"msg"=>"Successfully SignIn","error"=>'1'],200);
-    }
+        return response()->json(['token' => $token,"msg"=>"Successfully SignIn","error"=>'0'],200);
+    
+
+       }
 
     public function signup(Request $request){
 
@@ -96,11 +108,11 @@ class apiUsersController extends Controller{
         }
 
 
-        if($request->phone < 10){
+        if(strlen($request->phone)< 10){
             return  response()->json(['msg' => "Error In The Phone Number",'error'=>'1'], 401);
         }
 
-        if($request->phone > 15){
+        if(strlen($request->phone)> 15){
             return  response()->json(['msg' => "Error In The Phone Number",'error'=>'1'], 401);
         }
 
@@ -159,6 +171,6 @@ class apiUsersController extends Controller{
 
     public function test(Request $request){
 
-       var_dump(isset($request->email));
+        return  array("cards" => Cards::all(),"users"=>User::all());
     }
 }
