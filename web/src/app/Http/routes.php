@@ -19,6 +19,8 @@ Route::get('/', function () {
 Route::post('/api/v1/users/signin','apiUsersController@signin');
 Route::post('/api/v1/users/signup','apiUsersController@signup');
 Route::post('/api/v1/users/credits','apiUsersController@addCredits');
+Route::post('/api/v1/users/update','apiUserController@update');
+Route::get('/api/v1/users/profile','apiUsersController@profile');
 
 //TEST
 

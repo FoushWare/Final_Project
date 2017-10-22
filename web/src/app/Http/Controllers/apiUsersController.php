@@ -169,6 +169,20 @@ class apiUsersController extends Controller{
 
     }
 
+    public function profile(Request $request){
+
+        if(!$user = JWTAuth::parseToken()->authenticate()){
+            return response()->json(['msg' => "User not found","error"=>'1'], 404);
+        }
+
+        $client = User::find($user->id);
+        return $client;
+    }
+
+    public function update(Request $request){
+        //TODO:: Update user info
+    }
+
     public function test(Request $request){
 
         return  array("cards" => Cards::all(),"users"=>User::all());
