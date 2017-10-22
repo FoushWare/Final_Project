@@ -165,18 +165,20 @@ class apiUsersController extends Controller{
             return  response()->json(['msg' => "Query Exception"], 401);
         }
 
-
-
     }
 
     public function profile(Request $request){
+        try {
+            if(!$user = JWTAuth::parseToken()->authenticate()){
+                return response()->json(['msg' => "User not found","error"=>'1'], 404);
+            }
 
-        if(!$user = JWTAuth::parseToken()->authenticate()){
-            return response()->json(['msg' => "User not found","error"=>'1'], 404);
+            $client = User::find($user->id);
+            return response()->json(['msg' => "User Found",'data'=>$client,"error"=>'0'], 200);
+
+        } catch (JWTException $e) {
+            return response()->json(['msg' => "Could not create token","error"=>'1'], 500);
         }
-
-        $client = User::find($user->id);
-        return $client;
     }
 
     public function update(Request $request){
