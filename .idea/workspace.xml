@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e476aa0c-2fa8-43df-acc5-398aeff57363" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/app/Http/Controllers/apiUsersController.php" afterPath="$PROJECT_DIR$/web/src/app/Http/Controllers/apiUsersController.php" />
-    </list>
+    <list default="true" id="e476aa0c-2fa8-43df-acc5-398aeff57363" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -283,7 +281,7 @@
       <workItem from="1508700651019" duration="4025000" />
       <workItem from="1508705330496" duration="34000" />
       <workItem from="1510926029410" duration="5158000" />
-      <workItem from="1510953196437" duration="1571000" />
+      <workItem from="1510953196437" duration="1680000" />
     </task>
     <task id="LOCAL-00001" summary="API DOC">
       <created>1508704666804</created>
@@ -296,7 +294,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10788000" />
+    <option name="totallyTimeSpent" value="10897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
