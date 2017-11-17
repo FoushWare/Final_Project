@@ -123,11 +123,7 @@ class apiUsersController extends Controller{
         $user->password = Hash::make($request->password);
         $user->phone = $request->phone;
         $user->group_id = 1;
-<<<<<<< HEAD
-        $user->pics_uploaded = 0;
-=======
         $user->pics_uploaded = 1;
->>>>>>> master
         $user->save();
         try{
             $user->save();
