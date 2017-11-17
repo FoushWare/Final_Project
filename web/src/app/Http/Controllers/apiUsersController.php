@@ -50,7 +50,8 @@ class apiUsersController extends Controller{
             return response()->json(['msg' => "Could not create token","error"=>'1'], 500);
         }
 
-        return response()->json(['token' => $token,"msg"=>"Successfully SignIn","error"=>'0'],200);
+        $user =  User::where('email', $request->email);
+        return response()->json(['token' => $token,'pics_uploaded'=>$user->pics_uploaded,"msg"=>"Successfully SignIn","error"=>'0'],200);
     
 
        }
@@ -122,6 +123,7 @@ class apiUsersController extends Controller{
         $user->password = Hash::make($request->password);
         $user->phone = $request->phone;
         $user->group_id = 1;
+        $user->pics_uploaded = 0;
         $user->save();
         try{
             $user->save();
@@ -177,7 +179,7 @@ class apiUsersController extends Controller{
             return response()->json(['msg' => "User Found",'data'=>$client,"error"=>'0'], 200);
 
         } catch (JWTException $e) {
-            return response()->json(['msg' => "Could not create token","error"=>'1'], 500);
+            return response()->json(['msg' => "Invalid Token","error"=>'1'], 500);
         }
     }
 
@@ -187,6 +189,7 @@ class apiUsersController extends Controller{
 
     public function test(Request $request){
 
-        return  array("cards" => Cards::all(),"users"=>User::all());
+        $user =  User::where('email', $request->email);
+        return "sdfsd" ;//$user->name;  ToDO:: fix it
     }
 }
