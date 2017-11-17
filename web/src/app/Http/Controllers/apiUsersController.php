@@ -122,6 +122,7 @@ class apiUsersController extends Controller{
         $user->password = Hash::make($request->password);
         $user->phone = $request->phone;
         $user->group_id = 1;
+        $user->pics_uploaded = 1;
         $user->save();
         try{
             $user->save();
