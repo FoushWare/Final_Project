@@ -1,71 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_margin="50dp"
+    android:background="#f2f2f2"
     tools:context="com.example.tom.otgstore.SignUpActivity">
-    <Button
-        android:id="@+id/buttonShopping"
-        android:layout_width="200dp"
-        android:minWidth="88dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/ic_shopping_cart_black_24dp"
-        android:text="@string/shopping"
-        android:theme="@style/PrimaryButton"
 
-         />
+    <ImageView
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/cover" />
 
-    <Button
-        android:id="@+id/buttonBalance"
-        android:layout_width="200dp"
-        android:minWidth="88dp"
-        android:layout_height="50dp"
-        android:drawableLeft="@drawable/ic_attach_money_black_24dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="@string/balance"
-        android:theme="@style/PrimaryButton"
-         />
 
-    <Button
-        android:id="@+id/buttonHistory"
-        android:layout_width="200dp"
-        android:minWidth="88dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:drawableLeft="@drawable/ic_history_black_24dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/history"
-        android:theme="@style/PrimaryButton"
-         />
 
-    <Button
-        android:id="@+id/buttonProfile"
-        android:layout_width="200dp"
-        android:minWidth="88dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/ic_account_circle_black_24dp"
-        android:text="@string/profile"
-        android:theme="@style/PrimaryButton"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cover">
 
-        />
-    <Button
-        android:id="@+id/buttonSignOut"
-        android:layout_width="200dp"
-        android:minWidth="88dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/ic_assignment_return_black_24dp"
-        android:text="@string/signout"
-        android:theme="@style/PrimaryButton"
-         />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <GridLayout
+            android:id="@+id/btns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="10dp"
+            android:rowCount="2"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+
+
+            <LinearLayout
+                android:id="@+id/profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/face" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="Profile" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/money" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="Balance" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/history_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="History"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/court"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/account_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="Profile" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/logout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="Log out" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/info" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="About" />
+
+            </LinearLayout>
+
+        </GridLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="3dp"
+                android:text="Recommendations"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimary"/>
+
+        </LinearLayout>
+
+    <!--
+
+        <Button
+            android:id="@+id/buttonShopping"
+            android:layout_width="200dp"
+            android:minWidth="88dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_shopping_cart_black_24dp"
+            android:text="@string/shopping"
+            android:theme="@style/PrimaryButton"
+             />
+
+        <Button
+            android:id="@+id/buttonBalance"
+            android:layout_width="200dp"
+            android:minWidth="88dp"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/ic_attach_money_black_24dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="@string/balance"
+            android:theme="@style/PrimaryButton"
+             />
+
+        <Button
+            android:id="@+id/buttonHistory"
+            android:layout_width="200dp"
+            android:minWidth="88dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_history_black_24dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/history"
+            android:theme="@style/PrimaryButton"
+             />
+
+        <Button
+            android:id="@+id/buttonProfile"
+            android:layout_width="200dp"
+            android:minWidth="88dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+            android:text="@string/profile"
+            android:theme="@style/PrimaryButton"
+
+            />
+        <Button
+            android:id="@+id/buttonSignOut"
+            android:layout_width="200dp"
+            android:minWidth="88dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_assignment_return_black_24dp"
+            android:text="@string/signout"
+            android:theme="@style/PrimaryButton"
+             />
+    -->
+    </LinearLayout>
+    </ScrollView>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/QRBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        app:fabSize="normal"/>
+</RelativeLayout>

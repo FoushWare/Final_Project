@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             setContentView(R.layout.activity_main);
 
+            /*
             //Get the views of the MainActivity
             Button ProfileButton = (Button) findViewById(R.id.buttonProfile);
             Button BalanceButton = (Button) findViewById(R.id.buttonBalance);
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             HistoryButton.setOnClickListener((View.OnClickListener) this);
             SignOutButton.setOnClickListener((View.OnClickListener) this);
             ShoppingButton.setOnClickListener((View.OnClickListener) this);
-
+*/
 
         }
     }
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //implement the onClick method here
     public void onClick(View v) {
-
+/*
         //perform action on click
         switch (v.getId()) {
             case R.id.buttonProfile:
@@ -95,7 +96,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
         }
+        */
     }
+
 
     @Override
     protected void onResume() {
