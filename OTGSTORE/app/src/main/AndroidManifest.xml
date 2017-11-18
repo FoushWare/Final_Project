@@ -34,6 +34,16 @@
 
             android:label="@string/history"
             />
+        <!-- Service listening for any incoming messages -->
+        <service android:name=".FCM.MessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+
+            </intent-filter>
+
+        </service>
+
+
     </application>
 
 </manifest>

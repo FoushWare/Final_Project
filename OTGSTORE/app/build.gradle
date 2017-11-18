@@ -27,21 +27,21 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:26.0.0'
     compile 'com.android.support:appcompat-v7:26.0.0'
-    //Realtime dependence Database
-    compile 'com.google.firebase:firebase-database:11.4.0'
-    //Authentication firebase
-    compile 'com.google.firebase:firebase-auth:11.4.0';
-    //firebase cloud Messaging
-    compile 'com.google.firebase:firebase-messaging:11.4.0'
-    //Storage firebase
-    compile 'com.google.firebase:firebase-storage:11.4.0'
-    //FirebaseUi
-    compile 'com.google.android.gms:play-services-auth:11.4.0'
-    compile 'com.android.support:customtabs:26.0.0'
-    compile 'com.firebaseui:firebase-ui:2.3.0'
-    compile 'com.firebaseui:firebase-ui-auth:2.3.0'
+
+
+    //FCM cloud Messaging
+    compile'com.google.firebase:firebase-messaging:11.4.2'
+    //butterknif
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+
     //glide image loading and caching library
     compile 'com.github.bumptech.glide:glide:4.2.0'
+    //retrofit
+    compile'com.squareup.retrofit2:retrofit:2.3.0'
+    compile'com.squareup.retrofit2:converter-gson:2.3.0'
+
     annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
 }
 // Apply the Google Services plugin. Make sure to add the google-services.json file in the app
