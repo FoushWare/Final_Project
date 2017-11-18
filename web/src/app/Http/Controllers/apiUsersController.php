@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cards;
 use App\User;
 use App\UsersCards;
+use App\Http\Controllers\firebaseNotification;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Database\QueryException;
@@ -183,10 +184,64 @@ class apiUsersController extends Controller{
     }
 
     public function update(Request $request){
-        //TODO:: Update user info
+        try {
+            if(!$user = JWTAuth::parseToken()->authenticate()){
+                return response()->json(['msg' => "User not found","error"=>'1'], 404);
+            }
+
+            $client = User::find($user->id);
+
+            if(!isset($request->email)){
+                return  response()->json(['msg' => "Email Required",'error'=>'1'], 401);
+
+            }
+
+            if(!isset($request->name)){
+                return  response()->json(['msg' => "name Required",'error'=>'1'], 401);
+
+            }
+
+            if(!isset($request->phone)){
+                return  response()->json(['msg' => "Phone Required",'error'=>'1'], 401);
+
+            }
+
+            if(!filter_var($request->email,FILTER_VALIDATE_EMAIL)){
+                return  response()->json(['msg' => "Email Is Bad",'error'=>'1'], 401);
+            }
+
+            $u = User::where('email','=',$request->email)->first();
+
+            if( $u && strtoupper( $u->email ) == strtoupper($request->email)){
+                return  response()->json(['msg' => "Email has been used before",'error'=>'1'], 401);
+            }
+
+            if(strlen($request->phone)< 10){
+                return  response()->json(['msg' => "Error In The Phone Number",'error'=>'1'], 401);
+            }
+
+            if(strlen($request->phone)> 15){
+                return  response()->json(['msg' => "Error In The Phone Number",'error'=>'1'], 401);
+            }
+
+            $client->name = $request->name;
+            $client->email = $request->email;
+            $client->phone = $request->phone;
+            $client->save();
+
+            return response()->json(['msg' => "User Found",'data'=>$client,"error"=>'0'], 200);
+
+        } catch (JWTException $e) {
+            return response()->json(['msg' => "Could not create token","error"=>'1'], 500);
+        }
     }
 
     public function test(Request $request){
+
+
+        $notify = new firebaseNotification();
+
+        $notify->send_notification("","");
 
         return  array("cards" => Cards::all(),"users"=>User::all());
     }
