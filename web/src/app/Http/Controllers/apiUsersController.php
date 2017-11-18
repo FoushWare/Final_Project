@@ -52,10 +52,8 @@ class apiUsersController extends Controller{
         }
 
         $user =  User::where('email', $request->email);
-        return response()->json(['token' => $token,'pics_uploaded'=>$user->pics_uploaded,"msg"=>"Successfully SignIn","error"=>'0'],200);
-    
-
-       }
+        return response()->json(['token' => $token,"msg"=>"Successfully SignIn","error"=>'0'],200);
+        }
 
     public function signup(Request $request){
 
