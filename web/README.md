@@ -94,5 +94,30 @@ ERROR
 }
 ```
 >post :: /api/v1/users/update?token=TOKEN
+```json
+*Request  new data
+{
+	"email":"user@example.com",
+	"name":"name",
+	"phone":"phone"
+}
 
-//TODO:: 
+* Response 
+{
+    "msg": "User Found",
+    "data": {
+        "id": 1,
+        "name": "NAME",
+        "email": "USER@EXAMPLE.COM",
+        "status": 1,
+        "group_id": 1,
+        "balance": "USER-CREDITS",
+	"pics_uploaded": 1,
+        "phone": "PHONE",
+        "img": "LINK",
+        "created_at": "2017-10-17 14:53:17",
+        "updated_at": "2017-10-17 14:53:17"
+    },
+    "error": "0"
+}
+```

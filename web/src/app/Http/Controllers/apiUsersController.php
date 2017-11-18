@@ -237,18 +237,7 @@ class apiUsersController extends Controller{
         }
     }
 
-    public function test(Request $request){
-
-<<<<<<< HEAD
-        $user =  User::where('email', $request->email);
-        return "sdfsd" ;//$user->name;  ToDO:: fix it
-=======
-
-        $notify = new firebaseNotification();
-
-        $notify->send_notification("","");
-
-        return  array("cards" => Cards::all(),"users"=>User::all());
->>>>>>> master
+    public function test(Request $request)
+    {
     }
 }
