@@ -1,5 +1,6 @@
 package com.example.tom.otgstore.Adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,6 @@ import android.widget.TextView;
 import com.example.tom.otgstore.R;
 import com.example.tom.otgstore.models.Message;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,9 +23,11 @@ public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapte
     //define the expected items that will push to the RecyclerView with our TransactionAdapter
 
     private List<Message> messages;
+    private Context context;
 
-    public TransactionsAdapter( ArrayList<Message> messageList) {
+    public TransactionsAdapter(Context context, List<Message> messageList) {
         this.messages=  messageList;
+        this.context=context;
 
     }
 
@@ -34,9 +36,10 @@ public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapte
         ImageView itemImage;
         public itemHolder(View view){
             super(view);
-            itemName=(TextView) view.findViewById(R.id.title);
+            itemName=(TextView) view.findViewById(R.id.name);
             itemQuantity=(TextView) view.findViewById(R.id.quantity);
             itemPrice=(TextView) view.findViewById(R.id.price);
+            itemImage=(ImageView)view.findViewById(R.id.image);
 
         }
 

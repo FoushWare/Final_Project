@@ -41,7 +41,7 @@ public class MessagingService extends FirebaseMessagingService {
             Log.e("message content", remoteMessage.getData().get("message"));
 
 
-            //get the data that the server [moustafa send]
+            //get the data that the server [moustafa send] using FCM
             String messageContent = remoteMessage.getData().get("message");
 
 
