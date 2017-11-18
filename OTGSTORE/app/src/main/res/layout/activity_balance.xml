@@ -7,75 +7,59 @@
     android:orientation="vertical"
     tools:context="com.example.tom.otgstore.SignUpActivity">
     <!--LinearLayout for the title-->
+
+    <!--LinearLayout for the Add balance-->
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="35dp"
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/userbalance"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:textAlignment="center"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:layout_weight="0"
-            android:textColor="@color/Black"
-            />
-    </LinearLayout>
-   <!--current balance-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:text="@string/currentBalance"
-            android:textColor="@color/Black"
-            />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:hint="20 LE"
-            />
-
-    </LinearLayout>
-   <!--LinearLayout for the Add balance-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/addbalance"
-            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:text="@string/currentbalance"
             android:textAlignment="center"
             android:textAppearance="?android:textAppearanceLarge"
             android:layout_weight="0"
             android:textColor="@color/colorAccent"
             />
+
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="125 L.E"
+        android:textSize="18dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Credit:"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"/>
 
     <!--card number-->
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_horizontal_margin">
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+      >
 
-        <EditText
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/cardNumbertxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="Card Number"
+            android:padding="5dp"
+            android:layout_margin="5dp"
             android:hint="@string/cardnumber"
-            android:inputType="number"
             />
 
 

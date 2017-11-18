@@ -6,8 +6,11 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Slide;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,6 +37,12 @@ public class BalanceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balance);
+
+        setUpWindowAnimations();
+
+
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         SharedPreferences prefs = getSharedPreferences("Login", MODE_PRIVATE);
         String token = prefs.getString("token", null);
@@ -118,6 +127,15 @@ public class BalanceActivity extends AppCompatActivity {
             }
 
 
+        }
+    }
+
+    private void setUpWindowAnimations() {
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            Log.i("ANIM", "slide called");
+            Slide slide = new Slide(Gravity.LEFT);
+            slide.setDuration(200);
+            getWindow().setEnterTransition(slide);
         }
     }
 }

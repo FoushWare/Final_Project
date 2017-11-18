@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.rengwuxian.materialedittext.MaterialEditText;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -27,7 +29,7 @@ public class SignUpActivity extends AppCompatActivity {
      * name ,username ,photo
      * */
 
-    EditText usertxt, mailtxt, phonetxt, passwordtxt;
+    MaterialEditText usertxt, mailtxt, phonetxt, passwordtxt;
 
     private String URL = "http://www.mommmmom.esy.es/api/v1/users/signup";
 
@@ -36,10 +38,10 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        usertxt = (EditText) findViewById(R.id.usertxt);
-        mailtxt = (EditText) findViewById(R.id.mailtxt);
-        phonetxt = (EditText) findViewById(R.id.phonetxt);
-        passwordtxt = (EditText) findViewById(R.id.passwordtxt);
+        usertxt = (MaterialEditText) findViewById(R.id.usertxt);
+        mailtxt = (MaterialEditText) findViewById(R.id.mailtxt);
+        phonetxt = (MaterialEditText) findViewById(R.id.phonetxt);
+        passwordtxt = (MaterialEditText) findViewById(R.id.passwordtxt);
 
 
     }

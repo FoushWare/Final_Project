@@ -1,5 +1,6 @@
 package com.example.tom.otgstore;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -44,20 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             setContentView(R.layout.activity_main);
 
-            /*
-            //Get the views of the MainActivity
-            Button ProfileButton = (Button) findViewById(R.id.buttonProfile);
-            Button BalanceButton = (Button) findViewById(R.id.buttonBalance);
-            Button HistoryButton = (Button) findViewById(R.id.buttonHistory);
-            Button SignOutButton = (Button) findViewById(R.id.buttonSignOut);
-            Button ShoppingButton = (Button) findViewById(R.id.buttonShopping);
-            //set listeners for the buttons
-            ProfileButton.setOnClickListener((View.OnClickListener) this);
-            BalanceButton.setOnClickListener((View.OnClickListener) this);
-            HistoryButton.setOnClickListener((View.OnClickListener) this);
-            SignOutButton.setOnClickListener((View.OnClickListener) this);
-            ShoppingButton.setOnClickListener((View.OnClickListener) this);
-*/
 
         }
     }
@@ -67,36 +54,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //implement the onClick method here
     public void onClick(View v) {
-/*
+
+        Intent intent = new Intent();
+        String transitionName = "trans";
+
         //perform action on click
         switch (v.getId()) {
             case R.id.buttonProfile:
-                Intent profile = new Intent(MainActivity.this, ProfileActivity.class);
-                startActivity(profile);
+                intent = new Intent(MainActivity.this, ProfileActivity.class);
                 break;
             case R.id.buttonHistory:
-                Intent history = new Intent(MainActivity.this, HistoryAcivity.class);
-                startActivity(history);
+                intent = new Intent(MainActivity.this, HistoryAcivity.class);
                 break;
             case R.id.buttonBalance:
-                Intent balance = new Intent(MainActivity.this, BalanceActivity.class);
-                startActivity(balance);
+                intent = new Intent(MainActivity.this, BalanceActivity.class);
                 break;
             case R.id.buttonShopping:
-                Intent shopping = new Intent(MainActivity.this, TransactionsActivity.class);
-                startActivity(shopping);
+                intent = new Intent(MainActivity.this, TransactionsActivity.class);
                 break;
             case R.id.buttonSignOut:
                 SharedPreferences.Editor editor = getSharedPreferences("Login", MODE_PRIVATE).edit();
                 editor.putBoolean("isLogin", false);
                 editor.apply();
-
+                intent = new Intent(MainActivity.this,LoginActivity.class);
                 break;
             default:
                 break;
 
+
         }
-        */
+
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, v, transitionName);
+            startActivity(intent, transitionActivityOptions.toBundle());
+        }else{
+            startActivity(intent);
+        }
+
+
     }
 
 

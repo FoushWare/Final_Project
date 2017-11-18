@@ -5,27 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="15dp"
     tools:context="com.example.tom.otgstore.LoginActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:text="@string/mail"
-            android:textColor="@color/Black" />
 
-        <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/mailtxt"
             android:layout_width="0dp"
             android:layout_weight="2"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="Email"
+            android:hint="Email Address"
+            android:padding="5dp"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress" />
 
@@ -35,20 +32,16 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
         >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:text="@string/password"
-            android:textColor="@color/Black" />
 
-        <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/passwordtxt"
             android:layout_width="0dp"
             android:layout_weight="2"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="Password"
+            android:hint="Password"
+            android:padding="5dp"
             android:layout_height="wrap_content"
             android:inputType="textPassword"/>
 

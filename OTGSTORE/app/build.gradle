@@ -47,6 +47,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
 }
 // Apply the Google Services plugin. Make sure to add the google-services.json file in the app
 // folder. You download it from the Firebase console

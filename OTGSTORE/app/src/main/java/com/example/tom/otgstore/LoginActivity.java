@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.rengwuxian.materialedittext.MaterialEditText;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -21,16 +23,17 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText mailtxt, passwordtxt;
+    MaterialEditText mailtxt, passwordtxt;
     private String URL = "http://www.mommmmom.esy.es/api/v1/users/signin";
+    String token="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mailtxt = (EditText) findViewById(R.id.mailtxt);
-        passwordtxt = (EditText) findViewById(R.id.passwordtxt);
+        mailtxt = (MaterialEditText) findViewById(R.id.mailtxt);
+        passwordtxt = (MaterialEditText) findViewById(R.id.passwordtxt);
 
     }
 
@@ -57,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private class Login extends AsyncTask<String, Void, Void> {
 
-        String json="", error="", message="", token="";
+        String json="", error="", message="";
         ProgressDialog dialog;
         @Override
         protected void onPreExecute() {
@@ -108,19 +111,14 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(Void result) {
+        public void onPostExecute(Void result) {
             super.onPostExecute(result);
 
             dialog.dismiss();
 
             if(error.equals("0")) {
-                Toast.makeText(LoginActivity.this,"Signed in successfully", Toast.LENGTH_SHORT).show();
-                SharedPreferences.Editor editor = getSharedPreferences("Login", MODE_PRIVATE).edit();
-                editor.putBoolean("isLogin", true);
-                editor.putString("token", token);
-                editor.apply();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
+                CheckPics chechPics= new CheckPics();
+                chechPics.execute();
             }else if(error.equals("1")){
                 Toast.makeText(LoginActivity.this,"Server Error: "+message, Toast.LENGTH_SHORT).show();
             }else{
@@ -128,6 +126,82 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
+
+
+    private class CheckPics extends AsyncTask<String, Void, Void> {
+
+        String json="", error="", message="", pics_uploaded="";
+        ProgressDialog dialog;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = new ProgressDialog(LoginActivity.this); // this = YourActivity
+            dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            dialog.setMessage("Loading. Please wait...");
+            dialog.setIndeterminate(true);
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.show();
+        }
+
+        @Override
+        protected Void doInBackground(String... arg) {
+            // TODO Auto-generated method stub
+
+
+
+            ServiceHandler serviceClient = new ServiceHandler();
+
+            json = serviceClient.makeServiceCall("http://www.mommmmom.esy.es//api/v1/users/profile?token="+token,
+                    ServiceHandler.GET);
+
+
+            Log.d("CreatePredictionRequest", "> " + json);
+
+            if (json != null) {
+                try {
+                    JSONObject jsonObj = new JSONObject(json);
+                    error = jsonObj.getString("error");
+                    message = jsonObj.getString("msg");
+                    pics_uploaded = jsonObj.getString("pics_uploaded");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            } else {
+                Log.e("JSON Data", "JSON data error!");
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+
+            dialog.dismiss();
+
+            if(error.equals("0")) {
+                if (pics_uploaded.equals("1")) {
+                    Toast.makeText(LoginActivity.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
+                    SharedPreferences.Editor editor = getSharedPreferences("Login", MODE_PRIVATE).edit();
+                    editor.putBoolean("isLogin", true);
+                    editor.putString("token", token);
+                    editor.apply();
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(LoginActivity.this, "Sorry, You have to submit pics of your face !!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, UploadPics.class);
+                    startActivity(intent);
+                }
+            }else if(error.equals("1")){
+                Toast.makeText(LoginActivity.this,"Server Error: "+message, Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(LoginActivity.this,"Unknown Error occur, please try again ", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
 
     @Override
     public void onBackPressed() {

@@ -8,8 +8,7 @@
     <string name="login">Login</string>
     <string name="history">History</string>
     <string name="userbalance">Your Balance</string>
-    <string name="currentBalance">Current Balance</string>
-    <string name="addbalance">ADD Balance</string>
+    <string name="currentbalance">Current Credit</string>
     <string name="cardnumber">Enter the Card number</string>
     <string name="name">Name</string>
     <string name="username">UserName</string>

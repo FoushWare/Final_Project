@@ -26,159 +26,181 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <GridLayout
-            android:id="@+id/btns"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:padding="10dp"
-            android:rowCount="2"
-            android:orientation="horizontal"
-            android:background="#ffffff">
+           <TableLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:stretchColumns="*"
+               android:padding="5dp"
+               android:background="#ffffff">
+
+               <TableRow>
+                   <LinearLayout
+                       android:id="@+id/buttonProfile"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:gravity="center"
+                       android:padding="5dp"
+                       android:onClick="onClick"
+                       android:clickable="true"
+                       android:background="?attr/selectableItemBackgroundBorderless"
+                       android:orientation="vertical">
+
+                       <ImageView
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:src="@drawable/face" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="2dp"
+                           android:gravity="center"
+                           android:text="Profile" />
+
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:id="@+id/buttonBalance"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_columnWeight="1"
+                       android:onClick="onClick"
+                       android:clickable="true"
+                       android:background="?attr/selectableItemBackgroundBorderless"
+                       android:gravity="center"
+                       android:padding="5dp"
+                       android:orientation="vertical">
+
+                       <ImageView
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:src="@drawable/money" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="2dp"
+                           android:gravity="center"
+                           android:text="Balance" />
+
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:id="@+id/buttonHistory"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_columnWeight="1"
+                       android:onClick="onClick"
+                       android:clickable="true"
+                       android:background="?attr/selectableItemBackgroundBorderless"
+                       android:gravity="center"
+                       android:padding="5dp"
+                       android:orientation="vertical">
+
+                       <ImageView
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:src="@drawable/history_icon" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="2dp"
+                           android:gravity="center"
+                           android:text="History"/>
+
+                   </LinearLayout>
+
+               </TableRow>
+
+               <TableRow
+                   android:layout_marginTop="10dp">
+
+                   <LinearLayout
+                       android:id="@+id/buttonShopping"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:onClick="onClick"
+                       android:clickable="true"
+                       android:background="?attr/selectableItemBackgroundBorderless"
+                       android:layout_columnWeight="1"
+                       android:gravity="center"
+                       android:padding="5dp"
+                       android:orientation="vertical">
+
+                       <ImageView
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:src="@drawable/shopping" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="2dp"
+                           android:gravity="center"
+                           android:text="Shopping" />
+
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:id="@+id/buttonSignOut"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:onClick="onClick"
+                       android:layout_columnWeight="1"
+                       android:clickable="true"
+                       android:background="?attr/selectableItemBackgroundBorderless"
+                       android:gravity="center"
+                       android:padding="5dp"
+                       android:orientation="vertical">
+
+                       <ImageView
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:src="@drawable/logout" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="2dp"
+                           android:gravity="center"
+                           android:text="Log out" />
+
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:id="@+id/about"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:clickable="true"
+                       android:onClick="onClick"
+                       android:background="?attr/selectableItemBackgroundBorderless"
+                       android:layout_columnWeight="1"
+                       android:gravity="center"
+                       android:padding="5dp"
+                       android:orientation="vertical">
+
+                       <ImageView
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:src="@drawable/info" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="2dp"
+                           android:gravity="center"
+                           android:text="About" />
+
+                   </LinearLayout>
+
+               </TableRow>
+
+           </TableLayout>
 
 
-            <LinearLayout
-                android:id="@+id/profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/face" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="Profile" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/balance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/money" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="Balance" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/history"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/history_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="History"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/court"
-                android:layout_marginTop="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/account_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="Profile" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/logout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/logout" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="Log out" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/about"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/info" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="About" />
-
-            </LinearLayout>
-
-        </GridLayout>
 
         <LinearLayout
             android:orientation="vertical"
