@@ -235,6 +235,48 @@ class apiUsersController extends Controller{
         }
     }
 
+    /**
+     *  users histories as an array of orders
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function  history(Request $request){
+        try {
+            if(!$user = JWTAuth::parseToken()->authenticate()){
+                return response()->json(['msg' => "User not found","error"=>'1'], 404);
+            }
+
+            //$client = User::find($user->id);
+            $item = [
+                "name" => "test item",
+                "price" => "15$",
+                "quantity" => 5
+            ];
+
+            $order1 = [
+                'id' => "1",
+                "date" => "Nov 15, 2017 11:59:00 pm",
+                "items" => [$item,$item,$item]
+            ];
+
+            $order2 = [
+                'id' => "2",
+                "date" => "Nov 15, 2017 11:59:59 pm",
+                "items" => [$item,$item]
+            ];
+
+            $orders = [
+                0 => $order1,
+                1 => $order2
+            ];
+
+            return response()->json(['msg' => "User Found",'history'=>$orders,"error"=>'0'], 200);
+
+        } catch (JWTException $e) {
+            return response()->json(['msg' => "Invalid Token","error"=>'1'], 500);
+        }
+    }
+
     public function test(Request $request)
     {
     }

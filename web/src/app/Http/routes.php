@@ -21,6 +21,7 @@ Route::post('/api/v1/users/signup','apiUsersController@signup');
 Route::post('/api/v1/users/credits','apiUsersController@addCredits');
 Route::post('/api/v1/users/update','apiUsersController@update');
 Route::get('/api/v1/users/profile','apiUsersController@profile');
+Route::get('/api/v1/users/history','apiUsersController@history');
 
 //TEST
 
