@@ -7,6 +7,7 @@ use App\User;
 use App\UsersCards;
 use App\Http\Controllers\firebaseNotification;
 
+use GuzzleHttp\Client;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -21,7 +22,6 @@ class apiUsersController extends Controller{
         $this->middleware('jwt.auth',['only'=>[
             'addCredits'
         ]]);
-
     }
 
     public function signin(Request $request){
@@ -279,5 +279,6 @@ class apiUsersController extends Controller{
 
     public function test(Request $request)
     {
+
     }
 }

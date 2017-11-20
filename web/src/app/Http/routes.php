@@ -22,9 +22,10 @@ Route::post('/api/v1/users/credits','apiUsersController@addCredits');
 Route::post('/api/v1/users/update','apiUsersController@update');
 Route::get('/api/v1/users/profile','apiUsersController@profile');
 Route::get('/api/v1/users/history','apiUsersController@history');
-
+// orders
+Route::post('/api/v1/orders/registration','ordersController@newOrder');
 //TEST
 
 
-Route::get('/test','apiUsersController@test');
-Route::post('/test','apiUsersController@test');
+Route::get('/test','ordersController@newOrder');
+Route::post('/test','ordersController@newOrder');

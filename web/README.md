@@ -50,7 +50,7 @@ ERROR
 }
 
 ```
->post :: /api/v1/users/credits
+>post :: /api/v1/users/credits?token=TOKEN
 * Request
 ```json
 {
@@ -169,4 +169,29 @@ ERROR
     ],
     "error": "0"
 }
+```
+* QR
+>post :: /api/v1/orders/newOrder?token=TOKEN
+* Request
+```json
+{
+	"firebase_token":"_FIREBASE_TOKEN_"
+}
+```
+* Response 
+```json
+ok:200
+
+QR SVG file
+
+<?xml version="1.0" encoding="UTF-8"?>
+<svg>
+</svg>
+
+ERROR
+{
+"msg":"",
+"error":1 
+}
+
 ```
