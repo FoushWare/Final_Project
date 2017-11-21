@@ -171,7 +171,7 @@ ERROR
 }
 ```
 * QR
->post :: /api/v1/orders/newOrder?token=TOKEN
+>post :: /api/v1/orders/registration?token=TOKEN
 * Request
 ```json
 {
