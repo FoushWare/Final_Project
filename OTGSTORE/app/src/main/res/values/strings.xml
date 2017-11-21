@@ -18,4 +18,6 @@
     <string name="testphoto">testPhoto</string>
     <string name="testtext">testtext</string>
     <string name="send_button_label">send</string>
+
+    <string name="history_no_data">There is No data</string>
 </resources>
