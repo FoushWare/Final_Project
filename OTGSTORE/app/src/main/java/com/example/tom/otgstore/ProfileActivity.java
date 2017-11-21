@@ -80,7 +80,7 @@ public class ProfileActivity extends AppCompatActivity {
             ServiceHandler serviceClient = new ServiceHandler();
             SharedPreferences prefs = getSharedPreferences("Login", MODE_PRIVATE);
             String token = prefs.getString("token", null);
-            json = serviceClient.makeServiceCall(URL+token, ServiceHandler.POST, null);
+            json = serviceClient.makeServiceCall(URL+token, ServiceHandler.GET, null);
 
 
             if (json != null) {
