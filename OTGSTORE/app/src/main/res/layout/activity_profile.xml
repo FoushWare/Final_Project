@@ -77,10 +77,10 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp">
                 <TextView
-                    android:id="@+id/user_name_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="user name"
+
                     android:paddingTop="0dp"
                     android:paddingBottom="0dp"
                     android:layout_marginTop="0dp"
@@ -143,10 +143,10 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp">
                 <TextView
-                    android:id="@+id/phone_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0100 000 0000"
+
                     android:paddingTop="0dp"
                     android:paddingBottom="0dp"
                     android:layout_marginTop="0dp"
@@ -204,10 +204,10 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp">
                 <TextView
-                    android:id="@+id/email_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="xxxx@gmail.com"
+
                     android:paddingTop="0dp"
                     android:paddingBottom="0dp"
                     android:layout_marginTop="0dp"
@@ -264,10 +264,10 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp">
                 <TextView
-                    android:id="@+id/credit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="100 L.E"
+
                     android:paddingTop="0dp"
                     android:paddingBottom="0dp"
                     android:layout_marginTop="0dp"
