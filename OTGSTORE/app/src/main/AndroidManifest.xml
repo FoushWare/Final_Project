@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity"
+        <activity android:name=".MainActivity"
             android:label="@string/signup"
             />
         <activity android:name=".BalanceActivity"
@@ -34,24 +34,6 @@
 
             android:label="@string/history"
             />
-        <!-- Service listening for any incoming messages -->
-        <service android:name=".FCM.MessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-
-            </intent-filter>
-
-        </service>
-        <!-- Service listening to the token  incoming from FCM -->
-
-        <service
-            android:name=".FCM.FirebaseInstanceIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-        </service>
-
-
     </application>
 
 </manifest>
