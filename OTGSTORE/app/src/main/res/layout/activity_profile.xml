@@ -11,6 +11,9 @@
     android:orientation="vertical"
     tools:context="com.example.tom.otgstore.SignUpActivity">
 
+
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -57,8 +60,8 @@
 
             <ImageView
                 android:id="@+id/pic3"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
 
                 android:src="@drawable/nam"
 
@@ -87,7 +90,8 @@
                     android:layout_marginBottom="0dp"
                     android:layout_marginLeft="1dp"
                     android:textSize="18dp"
-                    android:background="#fdfefe"/>
+                    android:background="#fdfefe"
+                    android:id="@+id/user_name_text" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -153,7 +157,8 @@
                     android:layout_marginBottom="0dp"
                     android:layout_marginLeft="1dp"
                     android:textSize="20dp"
-                    android:background="#fdfefe"/>
+                    android:background="#fdfefe"
+                    android:id="@+id/phone_text" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -214,7 +219,8 @@
                     android:layout_marginBottom="0dp"
                     android:layout_marginLeft="1dp"
                     android:textSize="20dp"
-                    android:background="#fdfefe"/>
+                    android:background="#fdfefe"
+                    android:id="@+id/email_text" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -274,7 +280,8 @@
                     android:layout_marginBottom="0dp"
                     android:layout_marginLeft="1dp"
                     android:textSize="20dp"
-                    android:background="#fdfefe"/>
+                    android:background="#fdfefe"
+                    android:id="@+id/credit_text" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
