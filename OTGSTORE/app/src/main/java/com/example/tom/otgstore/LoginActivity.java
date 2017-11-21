@@ -162,7 +162,9 @@ public class LoginActivity extends AppCompatActivity {
                     JSONObject jsonObj = new JSONObject(json);
                     error = jsonObj.getString("error");
                     message = jsonObj.getString("msg");
-                    pics_uploaded = jsonObj.getString("pics_uploaded");
+                    String data = jsonObj.getString("data");
+                    JSONObject dataJson = new JSONObject(data);
+                    pics_uploaded = dataJson.getString("pics_uploaded");
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -189,11 +191,14 @@ public class LoginActivity extends AppCompatActivity {
                     editor.apply();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
-                }else {
+                }else if (pics_uploaded.equals("0")){
                     Toast.makeText(LoginActivity.this, "Sorry, You have to submit pics of your face !!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, UploadPics.class);
                     startActivity(intent);
+                }else{
+                    Toast.makeText(LoginActivity.this,"Unknown Error occur, please try again ", Toast.LENGTH_SHORT).show();
                 }
+
             }else if(error.equals("1")){
                 Toast.makeText(LoginActivity.this,"Server Error: "+message, Toast.LENGTH_SHORT).show();
             }else{

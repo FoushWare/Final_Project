@@ -3,18 +3,38 @@ package com.example.tom.otgstore;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.util.SparseArray;
+import android.view.LayoutInflater;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.vision.CameraSource;
+import com.google.android.gms.vision.Detector;
+import com.google.android.gms.vision.barcode.Barcode;
+import com.google.android.gms.vision.barcode.BarcodeDetector;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.io.IOException;
 import java.util.Arrays;
+
+import com.flipboard.bottomsheet.BottomSheetLayout;
+
 /**
  *In this class there will be
  *
@@ -30,7 +50,8 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-
+    BottomSheetLayout bottomSheet;
+    SurfaceView cameraView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,18 +59,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         SharedPreferences prefs = getSharedPreferences("Login", MODE_PRIVATE);
         Boolean isLogin = prefs.getBoolean("isLogin", false);
-        if (!isLogin ) {
-           Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        if (!isLogin) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
-        }else {
-
+        } else {
             setContentView(R.layout.activity_main);
-
-
         }
+
+        bottomSheet = (BottomSheetLayout) findViewById(R.id.bottomsheet);
+        LinearLayout scanQR = (LinearLayout) findViewById(R.id.buttonSearch);
+        scanQR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomSheet.showWithSheetView(LayoutInflater.from(MainActivity.this).inflate(R.layout.custom_view, bottomSheet, false));
+            }
+        });
+
+        cameraView = (SurfaceView) findViewById(R.id.camera_view);
+
     }
-
-
 
 
     //implement the onClick method here
@@ -76,8 +104,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 SharedPreferences.Editor editor = getSharedPreferences("Login", MODE_PRIVATE).edit();
                 editor.putBoolean("isLogin", false);
                 editor.apply();
-                intent = new Intent(MainActivity.this,LoginActivity.class);
+                intent = new Intent(MainActivity.this, LoginActivity.class);
                 break;
+
             default:
                 break;
 
@@ -87,12 +116,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (android.os.Build.VERSION.SDK_INT >= 21) {
             ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, v, transitionName);
             startActivity(intent, transitionActivityOptions.toBundle());
-        }else{
+        } else {
             startActivity(intent);
         }
 
 
     }
+
 
 
     @Override

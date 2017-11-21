@@ -48,6 +48,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    compile 'com.flipboard:bottomsheet-core:1.4.3'
+    compile 'com.google.android.gms:play-services:11.4.0'
 }
 // Apply the Google Services plugin. Make sure to add the google-services.json file in the app
 // folder. You download it from the Firebase console
