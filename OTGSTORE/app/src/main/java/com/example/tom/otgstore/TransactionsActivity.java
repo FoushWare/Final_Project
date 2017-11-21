@@ -12,7 +12,6 @@ import android.util.Log;
 
 import com.example.tom.otgstore.Adapter.TransactionsAdapter;
 import com.example.tom.otgstore.models.Message;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +32,7 @@ public class TransactionsActivity extends AppCompatActivity {
     private TransactionsAdapter madapter;
     private List<com.example.tom.otgstore.models.Message>messages=new ArrayList<>();
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -43,8 +43,7 @@ public class TransactionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transactions);
         //get the token from FCM
-        String token=FirebaseInstanceId.getInstance().getToken();
-        Log.d(TAG, "onCreate: Token = "+token);
+
 
         recyclerView = (RecyclerView) findViewById(R.id.list);
         //test the arraylist
