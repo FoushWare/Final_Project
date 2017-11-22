@@ -6,7 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode"/>
+    <meta-data
+        android:name="com.google.android.gms.vision.DEPENDENCIES"
+        android:value="barcode" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -37,7 +40,8 @@
             android:name=".HistoryAcivity"
             android:label="@string/history" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".UploadPics"></activity>
+        <activity android:name=".UploadPics" />
+        <activity android:name=".GetQRCode"></activity>
     </application>
 
 </manifest>

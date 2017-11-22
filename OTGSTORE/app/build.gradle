@@ -13,6 +13,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -50,6 +52,8 @@ dependencies {
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
     compile 'com.flipboard:bottomsheet-core:1.4.3'
     compile 'com.google.android.gms:play-services:11.4.0'
+    compile 'com.github.bumptech.glide:glide:3.6.0'
+    compile 'com.android.support:support-v4:19.1.0'
 }
 // Apply the Google Services plugin. Make sure to add the google-services.json file in the app
 // folder. You download it from the Firebase console

@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         bottomSheet = (BottomSheetLayout) findViewById(R.id.bottomsheet);
         LinearLayout scanQR = (LinearLayout) findViewById(R.id.buttonSearch);
+        /*
         scanQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+*/
         cameraView = (SurfaceView) findViewById(R.id.camera_view);
 
     }
@@ -106,7 +108,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editor.apply();
                 intent = new Intent(MainActivity.this, LoginActivity.class);
                 break;
-
+            case R.id.QRBtn:
+                intent = new Intent(MainActivity.this, GetQRCode.class);
+                break;
             default:
                 break;
 
