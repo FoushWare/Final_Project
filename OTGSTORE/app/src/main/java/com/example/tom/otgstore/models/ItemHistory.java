@@ -1,4 +1,4 @@
-package com.example.tom.otgstore.model;
+package com.example.tom.otgstore.models;
 
 /**
  * Created by Mirna on 11/21/2017.

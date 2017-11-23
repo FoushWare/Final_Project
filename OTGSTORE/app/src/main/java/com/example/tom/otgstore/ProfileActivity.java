@@ -11,14 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tom.otgstore.model.UserData;
+import com.example.tom.otgstore.models.UserData;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import org.w3c.dom.Text;
 
 public class ProfileActivity extends AppCompatActivity {
     /***

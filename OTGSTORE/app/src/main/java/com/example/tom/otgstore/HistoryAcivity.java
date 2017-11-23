@@ -12,8 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tom.otgstore.Adapter.HistoryAdapter;
-import com.example.tom.otgstore.model.ItemHistory;
-import com.example.tom.otgstore.model.UserData;
+import com.example.tom.otgstore.models.ItemHistory;
 
 import org.json.JSONArray;
 import org.json.JSONException;
