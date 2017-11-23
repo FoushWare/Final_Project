@@ -39,27 +39,27 @@ public class OTGItemsAdapter extends ArrayAdapter<OTGItems> {
 
 
 
-       //get the position of the item when clicking on it and  with it we can get every thing related to this item
+        //get the position of the item when clicking on it and  with it we can get every thing related to this item
         OTGItems item=getItem(position);
 
         //check if the item has photo in the db or not
 
         boolean isphoto=item.getPhotoUrl() != null;
-       if(isphoto){
-           Glide.with(photoImageView.getContext())
-                   .load(item.getPhotoUrl())
-                   .into(photoImageView);
-           name.setText(item.getName());
-           price.setText(item.getPrice());
-           quantity.setText(item.getQuantity());
-       }//else there will be will be a placeholder image of the item and the all text
+        if(isphoto){
+            Glide.with(photoImageView.getContext())
+                    .load(item.getPhotoUrl())
+                    .into(photoImageView);
+            name.setText(item.getName());
+            price.setText(item.getPrice());
+            quantity.setText(item.getQuantity());
+        }//else there will be will be a placeholder image of the item and the all text
         else{
-           //photoImageView.setVisibility(View.GONE);
-           name.setText(item.getName());
-           price.setText(item.getPrice());
-           quantity.setText(item.getQuantity());
+            //photoImageView.setVisibility(View.GONE);
+            name.setText(item.getName());
+            price.setText(item.getPrice());
+            quantity.setText(item.getQuantity());
 
-       }
+        }
 
         return convertView;
     }//End of getView method

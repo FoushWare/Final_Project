@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-//This part related to FCM Ui
+    //This part related to FCM Ui
     @Override
     protected void onResume() {
         super.onResume();
@@ -120,9 +120,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPause() {
         super.onPause();
-        }
-
-
     }
+
+
+}
 
 

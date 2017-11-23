@@ -67,7 +67,7 @@ public class BalanceActivity extends AppCompatActivity {
 
     private class ChargeBalance extends AsyncTask<String, Void, Void> {
 
-          String json="", error="", message="",credits="";
+        String json="", error="", message="",credits="";
 
         ProgressDialog dialog;
         @Override
