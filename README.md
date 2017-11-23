@@ -1,24 +1,51 @@
 # Final_Project
-final_project_tracking to track every thing in the project and our progress
 
-![picture alt](https://cdn.geekwire.com/wp-content/uploads/2016/12/3-3-1-630x730.png)
+This documentation for  tracking every thing in the project 
+
+* [Android](https://github.com/AhmedFouad60/Final_Project)
+* [web](https://github.com/AhmedFouad60/Final_Project/tree/moustafa/web)
+
+
+
+# Project overView
+
+## 
+
+
+<img src="https://cdn.geekwire.com/wp-content/uploads/2016/12/3-3-1-630x730.png" alt="Drawing" style="width: 600px;height: 400px"/>
+
 # user stories
-* Registration  -> **Download our app** this app will use the user mobile camera to get his **face**
-And Generate**QR** form this user
 
-* Credit: => Table that have  **id** for the user ,card Number for purchasing from our store
-* Login : in our store  => there will be camera 1
-
-..*This camera job is 
-
-1. Check face [..phase one..] 
-2. Check user QR [..phase two ..]
-
+* Registration
+* Credit
+* Login
 * Shopping
-  ==========
 
-1. Tracking item on shelf [..camera 2..]
-2. Tracking customer [..camera 3 ..] and sync with camera 2
-3. If the bill of the user exceed his money stored in the app ..Then .. we will give him a limited money to continue buying items and he/she will give them again later
-4. Exit gate ... there will be exit gate to check out the user
+
+### Registration
+**Download our app** ,our app will use the user mobile camera to get his **face**
+And Generate **QR** for the user to use this QR through the shopping process
+### Credit
+To use our app you should have money in your account ,you can do this by use cards number we provide just go to the tap named balance in our app
+### Login
+After login in our app you can see thing like that 
+
+<img src="https://preview.ibb.co/gYcoXm/Screenshot_2017_11_17_20_54_12_075_com_example_tom_otgstore.png" alt="Drawing" style="width: 300px;"/>
+
+if you want to get to the balance to add money or check your existing money you can click the button balance<br />
+if you want to go shopping now you just have to press the QR button to show your QR and go to the store to scan your QR and start shopping process
+
+
+### Shopping
+
+There will be some cameras to track the whole shopping process
+i.e(for one person) <br />
+
+cameras to check the users faces and cameras to check the products
+and relate between the users and the products they pick
+
+
+
+
+
 
