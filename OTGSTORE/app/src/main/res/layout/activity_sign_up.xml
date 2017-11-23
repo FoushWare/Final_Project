@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:padding="15dp"
     tools:context="com.example.tom.otgstore.SignUpActivity">
 
     <!--current balance-->
@@ -13,65 +13,97 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
         >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:text="@string/name"
-            android:textColor="@color/Black"
-            />
 
-        <EditText
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/usertxt"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:hint="Foush"
-            />
+            android:inputType="textPersonName"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="Name"
+            android:hint="Full Name"
+            android:padding="5dp"            />
 
     </LinearLayout>
     <!--current balance-->
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:text="@string/username"
-            android:textColor="@color/Black"
-            />
+        android:layout_height="wrap_content">
 
-        <EditText
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/mailtxt"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:hint="lionmoon60"
-            />
+            android:inputType="textEmailAddress"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="Email"
+            android:hint="Enter Valid Email"
+            android:padding="5dp" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-<View
-    android:layout_width="0dp"
-    android:layout_weight="1"
-    android:layout_height="0dp"/>
-        <Button
-            android:id="@+id/button2"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        >
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/passwordtxt"
             android:layout_width="0dp"
-            android:layout_weight="1"
-           android:layout_marginRight="96dp"
+            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:text="Take Photo" />
+            android:inputType="textPassword"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="Password"
+            android:hint="Password: at least 8 characters"
+            android:padding="5dp" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        >
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/phonetxt"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:maxLength="11"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="Phone"
+            android:hint="Phone Number"
+            android:padding="5dp"/>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="normal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="cameraClick"
+            android:src="@android:drawable/ic_menu_camera"/>
+
+    </RelativeLayout>
 
 </LinearLayout>
