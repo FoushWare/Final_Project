@@ -20,4 +20,8 @@
     <string name="send_button_label">send</string>
 
     <string name="history_no_data">There is No data</string>
+    
+    <string name="STR_UPDATE">Update</string>
+    <string name="STR_CANCEL">Cancel</string>
+    
 </resources>
