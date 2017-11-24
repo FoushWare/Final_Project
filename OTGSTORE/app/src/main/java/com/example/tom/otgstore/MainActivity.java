@@ -92,6 +92,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(MainActivity.this, LoginActivity.class);
                 break;
 
+            case R.id.QRBtn:
+                intent = new Intent(MainActivity.this, GetQRCode.class);
+                break;
             default:
                 break;
 
