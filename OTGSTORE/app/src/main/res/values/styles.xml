@@ -15,5 +15,10 @@
     </style>
 
 
+    <style name="Dialog" parent="Theme.AppCompat.Dialog.MinWidth">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
 
 </resources>
