@@ -14,7 +14,7 @@
 ```json 
 ok:200
 {
-    "token": "TOKEN"
+    "token": "TOKEN",
     "msg": "Successfully SignIn",
     "error": "0"
 }
