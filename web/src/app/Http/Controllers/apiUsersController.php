@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cards;
-use App\User;
+use App\OTG\Users\Models\User;
 use App\UsersCards;
 use App\Http\Controllers\firebaseNotification;
 

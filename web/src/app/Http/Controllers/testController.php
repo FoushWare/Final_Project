@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use OTG\Users\Services\apiUsersServices;
+use App\OTG\Users\Services\apiUsersServices;
+
 
 class testController extends Controller
 {
 
     public function post(request $request){
-
-        die('<br>POST test');
+        $x = new apiUsersServices();
+        return $x->example($request);
     }
 
     /**
@@ -20,9 +21,6 @@ class testController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function get(request $request){
-        // TODO:: Fix me
-        $x =  new apiUsersServices();
-        $x->test();
-        return response()->json([],200);
+
     }
 }

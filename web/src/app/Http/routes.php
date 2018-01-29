@@ -27,7 +27,8 @@ Route::group(['prefix'=>'api/v1/orders'],function () {
 });
 
 //web browser pages
-Route::group(['middleware' => 'web',],function (){
+// TODO :: recover web middle ware
+Route::group(['prefix' => '',],function (){
 
     Route::get('/', function () {
         return view('welcome');
