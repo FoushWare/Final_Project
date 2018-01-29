@@ -11,21 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix'=>'api/v1/users'],function (){
+    // API
+    Route::post('signin','apiUsersController@signin');
+    Route::post('signup','apiUsersController@signup');
+    Route::post('credits','apiUsersController@addCredits');
+    Route::post('update','apiUsersController@update');
+    Route::get('profile','apiUsersController@profile');
+    Route::get('history','apiUsersController@history');
 });
 
-// API
-Route::post('/api/v1/users/signin','apiUsersController@signin');
-Route::post('/api/v1/users/signup','apiUsersController@signup');
-Route::post('/api/v1/users/credits','apiUsersController@addCredits');
-Route::post('/api/v1/users/update','apiUsersController@update');
-Route::get('/api/v1/users/profile','apiUsersController@profile');
-Route::get('/api/v1/users/history','apiUsersController@history');
+Route::group(['prefix'=>'api/v1/orders'],function () {
 // orders
-Route::post('/api/v1/orders/registration','ordersController@newOrder');
+    Route::post('/registration', 'ordersController@newOrder');
+});
+
+//web browser pages
+Route::group(['middleware' => 'web',],function (){
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+
+    Route::get('test','testController@get');
+    Route::post('test','testController@post');
+
+});
 //TEST
 
-
-Route::get('/test','ordersController@newOrder');
-Route::post('/test','ordersController@newOrder');

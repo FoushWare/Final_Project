@@ -126,7 +126,7 @@ class apiUsersController extends Controller{
         $user->save();
         try{
             $user->save();
-            return  response()->json(['msg' => "User created",'error'=>'0'], 200);
+            return  response()->json(['msg' => "User created",'error'=>'0'], 201);
         }catch (QueryException $e){
             return  response()->json(['msg' => "Query Exception",'error'=>'1'], 401);
         }
@@ -275,10 +275,5 @@ class apiUsersController extends Controller{
         } catch (JWTException $e) {
             return response()->json(['msg' => "Invalid Token","error"=>'1'], 500);
         }
-    }
-
-    public function test(Request $request)
-    {
-
     }
 }
