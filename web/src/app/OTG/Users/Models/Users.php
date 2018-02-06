@@ -1,0 +1,12 @@
+<?php
+namespace App\OTG\Users\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Users extends Model
+{
+    protected $table = 'users';
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+}

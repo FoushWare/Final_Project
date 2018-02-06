@@ -1,0 +1,91 @@
+body{
+  color: #86be2e;
+}
+.red .icon-cogs i{
+    margin-top: 5px
+}
+
+
+
+
+.reset{
+    position: absolute;
+    color: #fff;
+    top: 14%;
+    
+}
+
+.reset h1{
+    color: #86be2e;
+}
+
+.wrap {
+    position: absolute;
+    top: 30%;
+    margin-right: 50%;
+}
+
+.main .pic{
+    float: right;
+    margin-top: 179px;
+    border-radius: 10px;    
+}
+.main .pic img{
+    border-radius: 10px;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    padding: 12px;
+    font-size: 20px;
+    z-index: 2;
+    margin-bottom: 25px;
+
+}
+
+input::-webkit-input-placeholder {
+    color: #fff;
+    transition: color .4s ease;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+
+
+
+
+.button{
+    margin-bottom: 30px;
+    border: 0;
+    outline: none;
+    padding: 1.1em;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    background:#86be2e;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+    margin-top:2.2em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; 
+    border-radius: 5px;
+}
+.button:hover, .button:focus {
+    background: #86be2e;
+    letter-spacing: 7px;
+}
+.button-block {
+    display: block;
+    width: 44%;
+}

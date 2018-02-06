@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>OTG-Store</title>
+
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet" >
+        
+		<link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/products.css">
+
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <section>
+        	<aside class="sidebar-left">
+
+                <a class="company-logo" href="#">Logo</a>
+
+                <div class="sidebar-links">
+                    <a class="link-blue" href="Admin.html"><i class="fa fa-user"></i>Profile</a>
+                    <a class="link-red" href="view-user.html"><i class="fa fa-users"></i>Users</a>
+                    <a class="link-yellow  selected" href="#"><i class="fa fa-shopping-bag"></i>Products</a>
+                    <a class="link-green" href="#"><i class="fa fa-shopping-cart"></i>Orders</a>
+                </div>
+
+            </aside>
+
+            <nav id="Nav">
+    				
+    				<div class="red">
+    					<a href="#" class="icon-cogs"><i class="fa fa-cogs"></i></a>
+    					<ul>
+    						<li><a href="updat-profile.html">Update</a></li>
+    						<li><a href="resset-password.html">Reset Password</a></li>
+    						<li><a href="#">Sign Out</a></li>
+    					</ul>
+    				</div>
+    				
+    		</nav>
+
+
+            <div class="main-content">
+            	
+                <div class="menu">
+                    
+                    <div class="row">
+  
+                        <div id="admin" class="col s12">
+
+                            <div class="card material-table">
+      
+                                <div class="table-header">
+
+                                    <span class="table-title">Current Users</span>
+
+                                </div>
+      
+                                <table id="datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Quantity</th>
+                                                <th>Price</th>
+                                                <th>QR</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Priduct 1</td>
+                                                <td>10</td>
+                                                <td>15 $</td>
+                                                <td><img src="img/qrcode.png"></td>
+                                                <td>Lorem ipsum dolor sit amet dolor sit amet</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Priduct 2</td>
+                                                <td>20</td>
+                                                <td>26 $</td>
+                                                <td><img src="img/qrcode.png"></td>
+                                                <td>Lorem ipsum dolor sit amet dolor sit amet</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+            
+        </section>
+                    
+
+        <!-- copyright -->
+        <div class="footer">
+            <p>© 2017 designed by<a href="store.html" target="_blank"> OTG-Stor Team</a></p>
+        </div>
+        <!-- //copyright --> 
+
+
+        
+
+        <script>
+
+            $(function () {
+
+                var links = $('.sidebar-links > a');
+
+                links.on('click', function () {
+
+                    links.removeClass('selected');
+                    $(this).addClass('selected');
+
+                })
+            });
+
+        </script>
+
+
+        
+
+    </body>
+
+</html>

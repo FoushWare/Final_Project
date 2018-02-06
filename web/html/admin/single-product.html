@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>OTG-Store</title>
+
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet" >
+        
+		<link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/single-product.css">
+
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <section>
+        	<aside class="sidebar-left">
+
+                <a class="company-logo" href="#">Logo</a>
+
+                <div class="sidebar-links">
+                    <a class="link-blue" href="Admin.html"><i class="fa fa-user"></i>Profile</a>
+                    <a class="link-red" href="view-user.html"><i class="fa fa-users"></i>Users</a>
+                    <a class="link-yellow" href="products.html"><i class="fa fa-shopping-bag"></i>Products</a>
+                    <a class="link-green" href="#"><i class="fa fa-shopping-cart"></i>Orders</a>
+                </div>
+
+            </aside>
+
+            <nav id="Nav">
+    				
+    				<div class="red">
+    					<a href="#" class="icon-cogs"><i class="fa fa-cogs"></i></a>
+    					<ul>
+    						<li><a href="updat-profile.html">Update</a></li>
+    						<li><a href="resset-password.html">Reset Password</a></li>
+    						<li><a href="#">Sign Out</a></li>
+    					</ul>
+    				</div>
+    				
+    		</nav>
+
+
+            <div class="main-content">
+            	
+                <div class="menu">
+                    <div class="title">
+                        <h3>Name Of Product</h3>
+                    </div>
+
+		            <div class="info">
+		                <div class="info-field col-md-4">
+		                	<img src="img/QR_code.png" alt="QR-code">
+		                    <h4>Price: <span>100$</span></h4>
+		                    <h4>Quantity: <span>10 pieces</span></h4>
+		                </div>
+		                <div class="info-field col-md-7">
+		                    <h4>Description: </h4>
+		                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+		                </div> 
+
+		                <button class="button button-block"/>Delet</button>
+		                <button class="button button-block"/>Update</button>
+		            </div>
+				</div>
+            </div>
+            
+        </section>
+
+
+        <!-- copyright -->
+        <div class="footer">
+            <p>© 2017 designed by<a href="store.html" target="_blank"> OTG-Stor Team</a></p>
+        </div>
+        <!-- //copyright --> 
+
+
+        
+
+        <script>
+
+            $(function () {
+
+                var links = $('.sidebar-links > a');
+
+                links.on('click', function () {
+
+                    links.removeClass('selected');
+                    $(this).addClass('selected');
+
+                })
+            });
+
+        </script>
+
+
+        
+
+    </body>
+
+</html>

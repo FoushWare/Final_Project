@@ -1,0 +1,103 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>OTG-Store</title>
+
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet" >
+        
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/update.css">
+
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+    </head>
+    <body>
+
+        <section>
+            <aside class="sidebar-left">
+
+                <a class="logo" href="#">Logo</a>
+
+                <div class="sidebar-links">
+                    <a class="link-blue" href="user profile.html"><i class="fa fa-user"></i>Profile</a>
+                    <a class="link-red" href="history.html"><i class="fa fa-history"></i>History</a>
+                    <a class="link-green" href="credits.html"><i class="fa fa-credit-card-alt"></i>Credits</a>
+                </div>
+
+            </aside>
+
+            <nav id="Nav">
+                    
+                    <div class="red">
+                        <a href="#" class="icon-cogs"><i class="fa fa-cogs"></i></a>
+                        <ul>
+                            <li><a href="#">Update</a></li>
+                            <li><a href="resset-password.html">Reset Password</a></li>
+                            <li><a href="#">Sign Out</a></li>
+                        </ul>
+                    </div>
+                    
+            </nav>
+
+
+            <div class="main-content">
+                
+                <div class="main">
+                    
+                    <div class="reset"><h1>Update Your Profile</h1></div>
+                    <div class="wrap">
+                        <input type="password" placeholder="Current Password">
+                        <input type="password" placeholder="New password">
+                        <input type="password" placeholder="New Password Again">
+                        
+                        <button class="button button-block"/>UPDATE</button>
+                    </div>
+                    <div class="pic"><a href="#"><img src="img/prof.png" alt="updated-profile-pic"></a></div>
+
+                </div>
+                    
+
+            </div>
+
+            
+            
+        </section>
+
+
+        <!-- copyright -->
+        <div class="footer">
+            <p>© 2017 designed by<a href="store.html" target="_blank"> OTG-Stor Team</a></p>
+        </div>
+        <!-- //copyright --> 
+
+
+        
+
+        <script>
+
+            $(function () {
+
+                var links = $('.sidebar-links > a');
+
+                links.on('click', function () {
+
+                    links.removeClass('selected');
+                    $(this).addClass('selected');
+
+                })
+            });
+
+        </script>
+
+        
+        
+
+    </body>
+
+</html>

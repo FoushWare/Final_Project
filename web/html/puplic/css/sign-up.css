@@ -142,36 +142,35 @@ textarea {
 } 
 
 .sign{
-	color: #fff;
+    color: #fff;
 }
 /*-- //main --*/ 
 
 
 /*-- copyright --*/
-.footer{ 
+.footer{
     text-align: center;
-	padding-bottom:3em;
+    padding-bottom:3em;
 }
 .footer p {
     font-size: 0.9em;
     color: #fff;
-	line-height:1.8em;
-	letter-spacing: 1px;
+    line-height:1.8em;
+    letter-spacing: 1px;
 }
 .footer p a{
     color: #fff; 
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-	transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        transition: 0.5s all;
 }
 .footer p a:hover{
-    color:#05e0e2;	
+    color:#05e0e2;
 }
 
 /*-- //copyright --*/
-
 
 /*-- responsive-design --*/
 @media(max-width:1440px){
@@ -280,5 +279,5 @@ label.active {
     font-size: 0.8em; 
     letter-spacing: 0px;
 }
-
+}
 /*-- //responsive-design --*/

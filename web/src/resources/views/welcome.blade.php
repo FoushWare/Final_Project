@@ -38,8 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">*OTG Strore~</div>
-                <p>...coming soon...</p>
+                <div class="title">*OTG Store~</div>
+                <h3>...coming soon...</h3>
             </div>
         </div>
     </body>
