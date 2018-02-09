@@ -14,6 +14,7 @@ use App\OTG\Users\Models\Users;
 use App\OTG\Cards\Models\Cards;
 use App\OTG\Cards\Models\UsersCards;
 use Illuminate\Database\QueryException;
+use League\Flysystem\Exception;
 
 class usersRepositories extends Repositories
 {
@@ -70,6 +71,7 @@ class usersRepositories extends Repositories
         }
 
         // update client balance
+
         $client = Users::find($user->id);
         $client-> balance += $card->value;
 
@@ -107,21 +109,45 @@ class usersRepositories extends Repositories
      * @return bool
      */
     public function update($id,$user){
-        $client = Users::find($id);
+        if($client = Users::find($id)){
+            // New data
+            $client->name = $user->name;
+            $client->email = $user->email;
+            $client->phone = $user->phone;
 
-        // New data
-        $client->name  = $user->name;
-        $client->email = $user->email;
-        $client->phone = $user->phone;
-
-        try{
-            // Save
-            return $client->save();
-        }catch (QueryException $e){
-            //Query Exception
-            return  false;
+            try{
+                // Save
+                return $client->save();
+            }catch (QueryException $e){
+                //Query Exception
+                return  false;
+            }
         }
+        return false;
 
+
+
+    }
+
+    /** Reset Password
+     * @param $id
+     * @param $password
+     * @return bool
+     */
+    public function updatePassword($id,$password){
+        if($user = Users::find($id)){
+            // New data
+            $user->password  = \Hash::make($password);
+
+            try{
+                $user->save();
+                return true;
+            }catch (QueryException $e){
+                //  Query Exception
+                return  false;
+            }
+        }
+        return false; // User not Found
     }
 
     public function clientHistory(){

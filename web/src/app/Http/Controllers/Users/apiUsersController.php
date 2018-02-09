@@ -1,12 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Users;
 
-use App\OTG\Users\Models\Users;
-use Illuminate\Database\QueryException;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\OTG\Users\Services\apiUsersServices;
+use App\Http\Controllers\Controller;
 
 class apiUsersController extends Controller{
 
@@ -21,7 +18,15 @@ class apiUsersController extends Controller{
      * @return \Illuminate\Http\JsonResponse
      */
     public function signin(){
-       return $this->usersServices->signin();
+        return $this->usersServices->signin();
+    }
+
+    /**
+     * Log out Function
+     * @return array|\Illuminate\Http\JsonResponse
+     */
+    public function logout(){
+        return $this->usersServices->logout();
     }
 
     /**
@@ -48,6 +53,15 @@ class apiUsersController extends Controller{
         return $this->usersServices->profile();
     }
 
+    /**
+     * Client Orders History
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function  history(){
+        return $this->usersServices->history();
+    }
+
+
     /** update user inf
      * @return \Illuminate\Http\JsonResponse
      */
@@ -55,12 +69,10 @@ class apiUsersController extends Controller{
         return $this->usersServices->update();
     }
 
-    /**
-     * Client Orders History
-     * @param Request $request
+    /**Update password
      * @return \Illuminate\Http\JsonResponse
      */
-    public function  history(Request $request){
-        return $this->usersServices->history();
+    public function passwordUpdate(){
+        return $this->usersServices->updatePassword();
     }
 }

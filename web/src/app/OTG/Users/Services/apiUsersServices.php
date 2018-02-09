@@ -46,7 +46,6 @@ class apiUsersServices extends Services
         else {
             return response()->json(["msg"=> $validator->errors()->all()[0],"error"=>'1'],401);
         }
-
     }
 
     /** Sign Up new User
@@ -157,6 +156,9 @@ class apiUsersServices extends Services
 
     }
 
+    /** update basic info  of user
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function update(){
         $rules = [
             'name'  =>'required|min:1|max:50',
@@ -194,6 +196,45 @@ class apiUsersServices extends Services
         $error = $validator->errors()->all()[0];
         return response()->json(['msg' => $error,"error"=>'1'], 500);
 
+    }
+
+    /**
+     * update the user password
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function updatePassword(){
+        $rules = [
+            'password'  => 'required| min:8|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',
+            'password_confirm' => 'required|same:password'
+        ];
+
+        try {
+            if(!$user = JWTAuth::parseToken()->authenticate()){
+                return response()->json(['msg' => "User not found","error"=>'1'], 404);
+            }
+        } catch (JWTException $e) { // Exception
+            return response()->json(['msg' => "Exception token","error"=>'1'], 500);
+        }
+
+        $validator = \Validator::make(Input::all(),$rules);
+
+        if($validator->passes()){
+            //get password
+            $password  = Input::get('password');
+
+            // send data to database
+            $check = $this->usersRepositories->updatePassword($user->id,$password);
+            // Check  data saving
+            if($check) {
+                JWTAuth::invalidate(Input::get('token'));
+                return response()->json(['msg' => "Password Updated", "error" => '0'], 200);
+            }
+            // Can't Save
+            return response()->json(['msg' => "Can't Save New Info Now","error"=>'1'], 403);
+        }
+        // return error
+        $error = $validator->errors()->all()[0];
+        return response()->json(['msg' => $error,"error"=>'1'], 500);
     }
 
     /**
@@ -237,6 +278,25 @@ class apiUsersServices extends Services
 
         // Token generated and ready to be used.
         return response()->json(['token' => $token,"msg"=>"Successfully SignIn","error"=>'0'],200);
+
+    }
+
+    /** logout
+     * Destroy the Token
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function logout(){
+        try { // Validate Token
+            if(!$user = JWTAuth::parseToken()->authenticate()){
+                return response()->json(['msg' => "User not found","error"=>'1'], 404);
+            }
+            if(JWTAuth::invalidate(Input::get('token')))
+                return response()->json(["msg"=>"Successfully Logout","error"=>'0'],200);
+        } catch (JWTException $e) { // Exception
+            return response()->json(['msg' => "Invalid Token","error"=>'1'], 500);
+        }
+
+
 
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,8 +13,7 @@ class testController extends Controller
 {
 
     public function post(request $request){
-        $x = new apiUsersServices();
-        return $x->example($request);
+
     }
 
     /**
@@ -21,6 +21,8 @@ class testController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function get(request $request){
-
+        $user = User::find(5);
+        $user->name = "dsfsdf";
+        return $user;
     }
 }
