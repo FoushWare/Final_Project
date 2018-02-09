@@ -13,18 +13,24 @@
 
 Route::group(['prefix'=>'api/v1/users'],function (){
     // API
-    Route::post('signin','apiUsersController@signin');
-    Route::post('signup','apiUsersController@signup');
-    Route::post('credits','apiUsersController@addCredits');
-    Route::post('update','apiUsersController@update');
-    Route::get('profile','apiUsersController@profile');
-    Route::get('history','apiUsersController@history');
+    Route::post('signin',   'Users\apiUsersController@signin');
+    Route::post('signup',   'Users\apiUsersController@signup');
+    Route::post('credits',  'Users\apiUsersController@addCredits');
+    Route::post('update',   'Users\apiUsersController@update');
+    Route::post('password', 'Users\apiUsersController@passwordUpdate');
+
+    Route::get('profile',   'Users\apiUsersController@profile');
+    Route::get('history',   'Users\apiUsersController@history');
+
+    Route::get('logout',    'Users\apiUsersController@logout');
 });
 
 Route::group(['prefix'=>'api/v1/orders'],function () {
 // orders
-    Route::post('/registration', 'ordersController@newOrder');
+    Route::post('/registration', 'Orders/ordersController@newOrder');
 });
+
+
 
 //web browser pages
 // TODO :: recover web middle ware
