@@ -48,6 +48,13 @@ class Handler extends ExceptionHandler
         if($request->is('api/v1/*')){
             return  response()->json(['msg' => "API Exception, app/Exceptions/Handler.php",'error'=>'1'], 500);
         }
+        //TODO :: handle exceptions for Users
+        //TODO :: handle exceptions for admins
+
+
+        if($request->is('*')){
+            return response()->view("errors.404");
+        }
 
         return parent::render($request, $e);
     }
