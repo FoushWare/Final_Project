@@ -30,10 +30,6 @@ Route::group(['prefix'=>'api/v1/orders'],function () {
     Route::post('/registration', 'Orders/ordersController@newOrder');
 });
 
-
-
-//web browser pages
-// TODO :: recover web middle ware
 Route::group(['prefix' => '','middleware' => 'web'],function (){
     //public Routes
     Route::get('/', function () {
