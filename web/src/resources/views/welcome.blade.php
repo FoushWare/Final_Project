@@ -40,6 +40,10 @@
             <div class="content">
                 <div class="title">*OTG Store~</div>
                 <h3>...coming soon...</h3>
+                <p class="title">
+                    <a href="{{url('signin')}}">SignIn</a>
+                    <a href="{{url('signup')}}">SignUp</a>
+                </p>
             </div>
         </div>
     </body>
