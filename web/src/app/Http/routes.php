@@ -34,11 +34,29 @@ Route::group(['prefix'=>'api/v1/orders'],function () {
 
 //web browser pages
 // TODO :: recover web middle ware
-Route::group(['prefix' => '',],function (){
-
+Route::group(['prefix' => '','middleware' => 'web'],function (){
+    //public Routes
     Route::get('/', function () {
         return view('welcome');
     });
+
+    Route::get('/signup',function (){
+        return view('public.signUp');
+    });
+
+    Route::get('/signin',function (){
+        return view('public.signin');
+    });
+
+    Route::get('/forgot',function (){
+        return view('public.forgot');
+    });
+
+    Route::get('/reset',function (){
+        return view('public.reset');
+    });
+
+
 
 
     Route::get('test','testController@get');
