@@ -21,8 +21,6 @@ class testController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function get(request $request){
-        $user = User::find(5);
-        $user->name = "dsfsdf";
-        return $user;
+        return view('public/signIn');
     }
 }
