@@ -41,7 +41,7 @@ Route::group(['prefix' => '','middleware' => 'web'],function (){
     });
 
     Route::get('/signin',function (){
-        return view('public.signin');
+        return view('public.signIn');
     });
 
     Route::get('/forgot',function (){
