@@ -27,7 +27,7 @@ Route::group(['prefix'=>'api/v1/users'],function (){
 
 Route::group(['prefix'=>'api/v1/orders'],function () {
 // orders
-    Route::post('/registration', 'Orders/ordersController@newOrder');
+    Route::post('/registration', 'Orders\ordersController@newOrder');
 });
 
 Route::group(['prefix' => '','middleware' => 'web'],function (){

@@ -12,7 +12,8 @@ use App\OTG\Users\Services\apiUsersServices;
 class testController extends Controller
 {
 
-    public function post(request $request){
+    public function post(request $request)
+    {
 
     }
 
@@ -20,7 +21,8 @@ class testController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function get(request $request){
-        return view('public/signIn');
+    public function get(request $request)
+    {
+
     }
 }
