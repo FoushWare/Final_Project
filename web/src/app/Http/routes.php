@@ -30,19 +30,18 @@ Route::group(['prefix'=>'api/v1/orders'],function () {
     Route::post('/registration', 'Orders\ordersController@newOrder');
 });
 
+
 Route::group(['prefix' => '','middleware' => 'web'],function (){
     //public Routes
     Route::get('/', function () {
         return view('welcome');
     });
 
-    Route::get('/signup',function (){
-        return view('public.signUp');
-    });
+    Route::get('signup',    'Front\publicController@getSignUp');
+    Route::post('signup',   'Front\publicController@postSignUp');
 
-    Route::get('/signin',function (){
-        return view('public.signIn');
-    });
+    Route::get('signin',    'Front\publicController@getSignIn');
+    Route::post('signin',   'Front\publicController@postSignIn');
 
     Route::get('/forgot',function (){
         return view('public.forgot');

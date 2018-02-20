@@ -7,23 +7,23 @@
             <form action="#" method="post">
                 <div class="field-wrap">
                     <label>Name<span class="req">*</span> </label>
-                    <input type="name"required autocomplete="off"/>
+                    <input type="text" value="{{old('name')}}" name="name" required autocomplete="off"/>
                 </div>
                 <div class="field-wrap">
                     <label>Email<span class="req">*</span> </label>
-                    <input type="email"required autocomplete="off"/>
+                    <input type="email" value="{{old('email')}}" name="email" required autocomplete="off"/>
                 </div>
                 <div class="field-wrap">
                     <label>Phone<span class="req">*</span> </label>
-                    <input type="text"required autocomplete="off"/>
+                    <input type="text" name="phone" value="{{old('phone')}}" required autocomplete="off"/>
                 </div>
                 <div class="field-wrap">
                     <label>Password<span class="req">*</span> </label>
-                    <input type="password"required autocomplete="off"/>
+                    <input type="password" name="password" required autocomplete="off"/>
                 </div>
                 <div class="field-wrap">
                     <label>Confirm Password<span class="req">*</span> </label>
-                    <input type="password"required autocomplete="off"/>
+                    <input type="password" name="confirmation" required autocomplete="off"/>
                 </div>
                 {{ csrf_field() }}
                 <button class="button button-block"/>Sign Up</button>

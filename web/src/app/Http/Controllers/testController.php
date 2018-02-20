@@ -23,6 +23,10 @@ class testController extends Controller
      */
     public function get(request $request)
     {
+        $errors = [1,2];
 
+        array_push($errors,[4]);
+
+        die(var_dump($errors));
     }
 }

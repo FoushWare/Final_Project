@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta carset="utf-8">
@@ -10,7 +10,7 @@
         <link   href =   "{{asset("resources/assets/public/css/bootstrap.css")}}" rel="stylesheet">
         <link   href =   "{{asset('resources/assets/public/css/font-awesome.min.css')}}" rel="stylesheet">
         <link   href =   "{{asset('resources/assets/public/css/log-in.css')}}" rel="stylesheet">
-        <script src  =   "{{asset('resources/resources/assets/public/js/jquery-2.2.3.min.js')}}"></script>
+        <script src  =   "{{asset('resources/assets/public/js/jquery-2.2.3.min.js')}}"></script>
 
         <link href='https://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -22,13 +22,28 @@
         <div class="title center" style="text-align: center;">
             <a href="{{url('/')}}">Home</a>
         </div>
+        @if(isset($successMessage) && strlen($successMessage))
+            <div class="success">
+                {{$successMessage}}
+            </div>
+
+        @endif
+        @if(isset($errors) && sizeof($errors))
+            <div class="errors">
+            @foreach($errors as $error)
+                <div class="error">
+                    {{$error}}
+                </div>
+            @endforeach
+            </div>
+        @endif
         @yield('content')
     </div>
     <!-- //main -->
 
     <!-- copyright -->
     <div class="footer">
-        <p>© 2017 designed by<a href="store.html" target="_blank"> OTG-Stor Team</a></p>
+        <p>© 2017 designed by<a href="{{url('/')}}" target="_blank"> OTG-Stor Team</a></p>
     </div>
     <!-- //copyright -->
 
@@ -66,6 +81,5 @@
 
         });
     </script>
-
     </body>
 </html>
