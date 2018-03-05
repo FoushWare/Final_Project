@@ -23,8 +23,12 @@
     <string name="send_button_label">send</string>
     <string name="submit">Submit</string>
     <string name="history_no_data">There is No data</string>
-    
-    <string name="STR_UPDATE">Update</string>
-    <string name="STR_CANCEL">Cancel</string>
-    
+    <string name="reset_password">Reset Password</string>
+    <string name="enter_password">Enter new Password</string>
+    <string name="re_enter_password">Re-enter new Password</string>
+    <string name="password_mismatch">Password mismatch</string>
+    <string name="password_no_value">Please Enter Password</string>
+    <string name="password_reseated_successfully">Password Reseated Successfully</string>
+
+
 </resources>
