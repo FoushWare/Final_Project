@@ -13,6 +13,7 @@
 
 
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -25,50 +26,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom|center_horizontal"
+
             android:src="@drawable/porf"
+
+
             />
 
 
+
+
     </RelativeLayout>
-
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="end">
-
-        <TextView
-            android:id="@+id/cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/STR_CANCEL"
-            android:paddingTop="0dp"
-            android:paddingBottom="0dp"
-            android:visibility="gone"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="1dp"
-            android:textSize="14dp"
-            android:clickable="true"
-            android:textColor="#2874a6"
-            android:background="#fdfefe"/>
-
-        <TextView
-            android:id="@+id/update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/STR_UPDATE"
-            android:paddingTop="0dp"
-            android:paddingBottom="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginLeft="1dp"
-            android:textSize="14dp"
-            android:clickable="true"
-            android:textColor="#2874a6"
-            android:background="#fdfefe"/>
-
-    </LinearLayout>
 
 
     <LinearLayout
@@ -77,6 +44,10 @@
         android:layout_height="0dp"
         android:layout_weight="7"
         android:background="#f2f3f4">
+
+
+
+
 
         <LinearLayout
             android:orientation="horizontal"
@@ -91,7 +62,10 @@
                 android:id="@+id/pic3"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
+
                 android:src="@drawable/nam"
+
+
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:paddingRight="0dp"
@@ -105,7 +79,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -119,22 +92,28 @@
                     android:textSize="18dp"
                     android:background="#fdfefe"
                     android:id="@+id/user_name_text" />
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/user_name_update_layout"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="gone">
+                    android:text="edit user name and password"
 
-                    <EditText
-                        android:id="@+id/user_name_update"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text" />
-                </android.support.design.widget.TextInputLayout>
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="1dp"
+                    android:textSize="14dp"
+                    android:textColor="#2874a6"
+                    android:background="#fdfefe"/>
 
             </LinearLayout>
 
         </LinearLayout>
+
+
+
+
+
 
 
         <LinearLayout
@@ -180,18 +159,19 @@
                     android:textSize="20dp"
                     android:background="#fdfefe"
                     android:id="@+id/phone_text" />
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/user_phone_update_layout"
-                    android:layout_width="match_parent"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit phone number"
 
-                    <EditText
-                        android:id="@+id/user_phone_update"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
-                </android.support.design.widget.TextInputLayout>
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="1dp"
+                    android:textSize="14dp"
+                    android:textColor="#2874a6"
+                    android:background="#fdfefe"/>
 
 
 
@@ -210,7 +190,10 @@
                 android:id="@+id/pic5"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
+
                 android:src="@drawable/mail"
+
+
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:paddingRight="0dp"
@@ -225,7 +208,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -239,19 +221,19 @@
                     android:textSize="20dp"
                     android:background="#fdfefe"
                     android:id="@+id/email_text" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="edit e-mail"
 
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/user_email_update_layout"
-                    android:layout_width="match_parent"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/user_email_update"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textEmailAddress" />
-                </android.support.design.widget.TextInputLayout>
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="1dp"
+                    android:textSize="14dp"
+                    android:textColor="#2874a6"
+                    android:background="#fdfefe"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -269,7 +251,10 @@
                 android:id="@+id/pic6"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
+
                 android:src="@drawable/mon"
+
+
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:paddingRight="0dp"
@@ -288,6 +273,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="100 L.E"
+
                     android:paddingTop="0dp"
                     android:paddingBottom="0dp"
                     android:layout_marginTop="0dp"
@@ -296,19 +282,19 @@
                     android:textSize="20dp"
                     android:background="#fdfefe"
                     android:id="@+id/credit_text" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="add credit"
 
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/user_credit_update_layout"
-                    android:layout_width="match_parent"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/user_credit_update"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
-                </android.support.design.widget.TextInputLayout>
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="1dp"
+                    android:textSize="14dp"
+                    android:textColor="#2874a6"
+                    android:background="#fdfefe"/>
 
 
 
@@ -321,11 +307,22 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"
-            android:background="#f2f3f4">
+            android:layout_gravity="right">
 
+            <TextView
+                android:id="@+id/reset_password"
+                android:clickable="true"
+                android:layout_gravity="right"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2874a6"
+                android:gravity="right"
+                android:text="@string/reset_password" />
         </LinearLayout>
 
 
     </LinearLayout>
 
-</LinearLayout
+</LinearLayout>
