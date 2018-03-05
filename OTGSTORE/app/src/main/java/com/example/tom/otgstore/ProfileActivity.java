@@ -1,10 +1,12 @@
 package com.example.tom.otgstore;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView credit;
     private String URL = null;
     private UserData userDataModel;
+    private TextView changePasswordText;
 
 
     @Override
@@ -44,6 +47,14 @@ public class ProfileActivity extends AppCompatActivity {
         mobile = (TextView) findViewById(R.id.phone_text);
         email = (TextView) findViewById(R.id.email_text);
         credit = (TextView) findViewById(R.id.credit_text);
+        changePasswordText = (TextView)findViewById(R.id.reset_password);
+        changePasswordText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(ProfileActivity.this,ResetPasswordActivity.class));
+            }
+        });
 
         updateUiComponent();
     }
