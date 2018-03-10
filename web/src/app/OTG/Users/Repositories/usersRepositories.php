@@ -150,6 +150,19 @@ class usersRepositories extends Repositories
         return false; // User not Found
     }
 
+    public function sendEmail($email){
+        if(!$user = Users::where('email','=',$email)->first())
+            return false;
+        //TODO :: Sent reset LINK
+        if($_SERVER['HTTP_HOST'] != "localhost:8000") {
+            \Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
+                $m->from('hello@app.com', 'Your Application');
+                $m->to("e@elgammal.me", "Moustafa")->subject('Your Reminder!');
+            });
+        }
+        return true;
+    }
+
     public function clientHistory(){
         // TODO :: get user Orders
 

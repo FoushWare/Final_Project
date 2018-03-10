@@ -7,11 +7,14 @@
         <form action="{{url('forgot')}}" method="post">
             <div class="field-wrap">
                 <label> Enter Your Email<span class="req">*</span> </label>
-                <input type="email"required autocomplete="off"/>
+                <input type="email" name="email" required/>
             </div>
             <!-- DOTO :: Human detector
             -->
-            <button class="button button-block"/><a href="log-in.html">Continue</a></button>
+            {{ csrf_field() }}
+            <input class="button button-block" type="submit" value="Continue"/>
+            <p class="sign">logIn From <a href="{{url('signin')}}">Here</a>.</p>
+            <p class="sign">New customer?<a href="{{url('signup')}}"> Sign up now !</a></p>
         </form>
     </div>
 </div>

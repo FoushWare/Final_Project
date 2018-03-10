@@ -95,4 +95,26 @@ class usersFrontServices extends Services
             return  false;
         }
     }
+
+    /** Forget function
+     * @return bool
+     */
+    public function forget(){
+        $rules = [
+            'email' => "required|email|exists:users"
+        ];
+        $validator = \Validator::make(Input::all(), $rules);
+        if($validator->passes()){
+            $email = Input::get('email');
+            if( $this->usersRepositories->sendEmail($email)){
+                return true;
+            } else {
+                $this->setErrors(["Query Exception"]);
+                return false;
+            }
+        } else {
+            $this->setErrors($validator->errors()->all());
+            return false;
+        }
+    }
 }

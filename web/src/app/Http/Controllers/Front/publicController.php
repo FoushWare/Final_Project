@@ -49,4 +49,17 @@ class publicController extends Controller
         return redirect()->back()->with('errors',$this->Front->getErrors())->withInput();
     }
 
+
+    public function postForgot(){
+        $check = $this->Front->forget();
+        if($check) {
+            return view('public.forgot')->with('successMessage', "Please, Check your email inbox, we have sent a rest link");
+        }
+        return redirect()->back()->with('errors',$this->Front->getErrors())->withInput();
+    }
+
+    public function getForgot(){
+        return view('public.forgot');
+    }
+
 }

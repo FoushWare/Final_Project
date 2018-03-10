@@ -43,20 +43,19 @@ Route::group(['prefix' => '','middleware' => 'web'],function (){
     Route::get('signin',    'Front\publicController@getSignIn');
     Route::post('signin',   'Front\publicController@postSignIn');
 
-    Route::get('/forgot',function (){
-        return view('public.forgot');
-    });
+
+    Route::get('forgot',    'Front\publicController@getForgot');
+    Route::post('forgot',   'Front\publicController@postForgot');
 
     Route::get('/reset',function (){
         return view('public.reset');
     });
 
-
-
-
-    Route::get('test','testController@get');
-    Route::post('test','testController@post');
-
+    Route::get('QRLogin',function (){
+        return "<h1>Coming Soon</h1>";
+    });
 });
-//TEST
 
+//TEST
+Route::get('test','testController@get');
+Route::post('test','testController@post');
