@@ -24,6 +24,10 @@ class ordersServices extends Services
         $this->OrdersRepositories = new ordersRepositories();
     }
 
+    /**
+     * receive the firebase token
+     * @return \Illuminate\Http\JsonResponse|\Psr\Http\Message\StreamInterface
+     */
     public function createNewOrder(){
         try {
 

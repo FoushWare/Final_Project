@@ -11,7 +11,7 @@ API's
             }
             ```
         * Response 
-            ```json 
+            ```json
             {
                 "token": "__TOKEN__ IF SUCCESS",
                 "msg": "__MESSAGE_TEXT__",

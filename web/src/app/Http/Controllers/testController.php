@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\OTG\Firebase\Services\firebaseNotificationsServices;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -17,16 +18,20 @@ class testController extends Controller
 
     }
 
-    /**
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
+
     public function get(request $request)
     {
-        $errors = [1,2];
+        $token = "kyomxsW6HUYqG2FNns9Rkv2YckC2";
 
-        array_push($errors,[4]);
+        $data = new \stdClass();
+        $data->userToken    = $token;
+        $data->body         = 'Catch me if you can!';
+        $data->sound        = 'default';
+        $data->dataArray        = ['key' => 'value'];
 
-        die(var_dump($errors));
+        $firebase = new firebaseNotificationsServices();
+        return [$firebase->message()];
     }
+
+
 }

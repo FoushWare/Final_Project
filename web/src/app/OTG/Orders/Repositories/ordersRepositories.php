@@ -9,20 +9,46 @@
 namespace App\OTG\Orders\Repositories;
 
 
+use App\OTG\Firebase\Services\firebaseNotificationsServices;
 use App\OTG\Repositories;
 use Illuminate\Database\QueryException;
 use App\OTG\Users\Models\Users;
 
+
 class ordersRepositories extends Repositories {
 
+    /** save the firebase token of the user
+     * @param $uid
+     * @param $firebaseToken
+     * @return bool
+     */
     public function SaveFireBaseToken($uid, $firebaseToken){
         $client = Users::find($uid);
         $client->remember_token = $firebaseToken;
         try {
-            return $client->save();
+            return $this->checkFireBaseToken($firebaseToken) && $client->save();
         } catch (QueryException $e){
             return false;
         }
     }
+
+
+    public function checkFireBaseToken($firebaseToken){
+
+        $firebase = new firebaseNotificationsServices();
+
+        $data = new \stdClass();
+
+        $data->userToken    = $firebaseToken;
+        $data->body         = 'Catch me if you can!';
+        $data->sound        = 'default';
+        $data->dataArray        = ['key' => 'value'];
+
+
+        return [$firebase->notifyUser($data)];
+    }
+
+
+
 
 }
