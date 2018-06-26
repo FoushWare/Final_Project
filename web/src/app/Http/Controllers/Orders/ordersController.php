@@ -20,8 +20,11 @@ class ordersController extends Controller
         $this->ordersServices = new ordersServices();
     }
 
-    public function newOrder(){
-        return $this->ordersServices->createNewOrder();
+    /** Create New order
+     * @return \Illuminate\Http\JsonResponse|\Psr\Http\Message\StreamInterface
+     */
+    public function saveToken(){
+        return $this->ordersServices->saveToken();
     }
 
 

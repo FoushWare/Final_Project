@@ -28,7 +28,7 @@ class ordersServices extends Services
      * receive the firebase token
      * @return \Illuminate\Http\JsonResponse|\Psr\Http\Message\StreamInterface
      */
-    public function createNewOrder(){
+    public function saveToken(){
         try {
 
             if(!$user = JWTAuth::parseToken()->authenticate()){
@@ -75,7 +75,6 @@ class ordersServices extends Services
         } catch (JWTException $e) {// Exception
             return response()->json(['msg' => "Invalid Token","error"=>'1'], 500);
         }
-
     }
 
 

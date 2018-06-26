@@ -61,23 +61,7 @@ class firebaseNotificationsServices
         $downstreamResponse = FCM::sendTo($userToken, $option, $notification, $data);
 
         return $downstreamResponse->numberSuccess()? true :false;
-
     }
-
-    public function message(){
-        $numberSucess = 2;
-        $mockResponse = new MockDownstreamResponse($numberSucess);
-
-        $mockResponse->addTokenToDelete('token_to_delete');
-        $mockResponse->addTokenToModify('token_to_modify', 'token_modified');
-        $mockResponse->setMissingToken(true);
-
-        $sender = \Mockery::mock(\LaravelFCM\Sender\FCMSender::class);
-        $sender->shouldReceive('sendTo')->once()->andReturn($mockResponse);
-
-        return var_dump($sender);
-    }
-
 
 
 }

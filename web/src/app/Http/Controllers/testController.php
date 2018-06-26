@@ -21,8 +21,7 @@ class testController extends Controller
 
     public function get(request $request)
     {
-        $token = "kyomxsW6HUYqG2FNns9Rkv2YckC2";
-
+        $token = "edhuJVGnpKw:APA91bHTIggFofRE-6h3umqWb_Kv5fEvtyp4l4HrYtbr6HuDm5H7wLT-KL81EAxbiiYNyrYEyLhgjNVDUu7dni0s1iybKdA9JNQR4i2e_vR6PCFReW3YNe71Uggp5txYFJxUT7DWi6Qo";
         $data = new \stdClass();
         $data->userToken    = $token;
         $data->body         = 'Catch me if you can!';
@@ -30,8 +29,7 @@ class testController extends Controller
         $data->dataArray        = ['key' => 'value'];
 
         $firebase = new firebaseNotificationsServices();
-        return [$firebase->message()];
+        return [$firebase->notifyUser($data)];
     }
-
 
 }

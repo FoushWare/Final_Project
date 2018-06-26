@@ -23,6 +23,7 @@ class ordersRepositories extends Repositories {
      * @return bool
      */
     public function SaveFireBaseToken($uid, $firebaseToken){
+
         $client = Users::find($uid);
         $client->remember_token = $firebaseToken;
         try {
@@ -33,19 +34,19 @@ class ordersRepositories extends Repositories {
     }
 
 
-    public function checkFireBaseToken($firebaseToken){
+    public function sendNotification($firebaseToken){
 
         $firebase = new firebaseNotificationsServices();
 
         $data = new \stdClass();
 
         $data->userToken    = $firebaseToken;
-        $data->body         = 'Catch me if you can!';
+        $data->body         = 'Open Current Order...!';
         $data->sound        = 'default';
         $data->dataArray        = ['key' => 'value'];
 
 
-        return [$firebase->notifyUser($data)];
+        return $firebase->notifyUser($data);
     }
 
 

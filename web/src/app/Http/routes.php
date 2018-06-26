@@ -27,8 +27,15 @@ Route::group(['prefix'=>'api/v1/users'],function (){
 
 Route::group(['prefix'=>'api/v1/orders'],function () {
 // orders
-    Route::post('/registration', 'Orders\ordersController@newOrder');
+    Route::post('/registration', 'Orders\ordersController@saveToken');
 });
+
+Route::group(['prefix'=>'api/v1/raspberry'],function () {
+// orders
+    Route::post('/signin', 'Raspberry\raspberryController@newOrder');
+});
+
+
 
 
 Route::group(['prefix' => '','middleware' => 'web'],function (){
