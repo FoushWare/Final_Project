@@ -10,6 +10,7 @@ namespace App\OTG\Orders\Repositories;
 
 
 use App\OTG\Firebase\Services\firebaseNotificationsServices;
+use App\OTG\Orders\Models\OrdersModel;
 use App\OTG\Repositories;
 use Illuminate\Database\QueryException;
 use App\OTG\Users\Models\Users;
@@ -34,6 +35,10 @@ class ordersRepositories extends Repositories {
     }
 
 
+    /**
+     * @param $firebaseToken
+     * @return bool
+     */
     public function sendNotification($firebaseToken){
 
         $firebase = new firebaseNotificationsServices();
@@ -47,6 +52,30 @@ class ordersRepositories extends Repositories {
 
 
         return $firebase->notifyUser($data);
+    }
+
+
+    /**
+     * @param $user_id
+     * @return Order ID
+     */
+    public function newOrder($user_id){
+
+        $order = new OrdersModel();
+
+        $order->user_id = $user_id;
+        $order->checked = 0;
+
+        try{
+            $order->save();
+
+            return $order->id;
+
+        } catch ( QueryException $exception){
+            return 0;
+
+        }
+
     }
 
 

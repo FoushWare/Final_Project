@@ -14,10 +14,24 @@ use App\OTG\Raspberries\Services\raspberriesServices;
 
 class raspberryController extends Controller
 {
-    public function newOrder(){
-        $orders = new raspberriesServices();
-        return 0;
+    private $service;
+
+
+    public function __construct(){
+
+        $this->service = new raspberriesServices();
     }
 
 
+    public function checkIn(){
+        return $this->service->add();
+    }
+
+    public function item(){
+        return $this->service->item();
+    }
+
+    public function checkOut(){
+        return $this->service->out();
+    }
 }

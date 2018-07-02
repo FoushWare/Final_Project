@@ -30,9 +30,17 @@ Route::group(['prefix'=>'api/v1/orders'],function () {
     Route::post('/registration', 'Orders\ordersController@saveToken');
 });
 
-Route::group(['prefix'=>'api/v1/raspberry'],function () {
+
+/**
+ * Ras end Points
+ */
+Route::group(['prefix'=>'/ras'],function () {
 // orders
-    Route::post('/signin', 'Raspberry\raspberryController@newOrder');
+    Route::post('in',      'Raspberry\raspberryController@checkIn');
+    Route::post('user',      'Raspberry\raspberryController@user');
+    Route::post('item',    'Raspberry\raspberryController@item');
+    Route::post('out',      'Raspberry\raspberryController@checkOut');
+
 });
 
 

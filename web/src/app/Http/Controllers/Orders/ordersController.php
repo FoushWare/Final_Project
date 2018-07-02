@@ -26,9 +26,4 @@ class ordersController extends Controller
     public function saveToken(){
         return $this->ordersServices->saveToken();
     }
-
-
-    public function currentOrders(){
-        //TODO:: users orders
-    }
 }

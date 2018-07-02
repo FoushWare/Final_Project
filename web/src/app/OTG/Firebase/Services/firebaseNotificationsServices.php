@@ -48,7 +48,7 @@ class firebaseNotificationsServices
         $body       = $data->body;
         $dataArray  = $data->dataArray;
 
-        $this->optionBuilder->setTimeToLive(60*20);
+        $this->optionBuilder->setTimeToLive(60*200);
 
         $this->notificationBuilder->setBody($body)->setSound($sound);
 

@@ -67,6 +67,7 @@ class ordersServices extends Services
                 $res = $client->request($method,$url, $options);
                 if($res->getStatusCode() != 200) //check response status
                     return response()->json(['msg' => "QR cloud Error","error"=>'1'], $res->getStatusCode());
+
                 return $res->getBody(); // QR SVG
             } else{ // Validation error
                 $error = $validator->errors()->all()[0];

@@ -27,7 +27,6 @@ class testController extends Controller
         $data->body         = 'Catch me if you can!';
         $data->sound        = 'default';
         $data->dataArray        = ['key' => 'value'];
-
         $firebase = new firebaseNotificationsServices();
         return [$firebase->notifyUser($data)];
     }
