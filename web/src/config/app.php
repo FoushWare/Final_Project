@@ -149,6 +149,12 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * QR Generator
+         */
+        LaravelQRCode\Providers\QRCodeServiceProvider::class,     
+
+
+        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
@@ -209,7 +215,10 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'JWTAuth'=>Tymon\JWTAUTH\Facades\JWTAuth::class,
         'FCM'      => LaravelFCM\Facades\FCM::class,
-        'FCMGroup' => LaravelFCM\Facades\FCMGroup::class
+        'FCMGroup' => LaravelFCM\Facades\FCMGroup::class,
+
+        'QRCode' => LaravelQRCode\Facades\QRCode::class   
+
     ],
 
 ];

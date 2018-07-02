@@ -30,6 +30,10 @@ Route::group(['prefix'=>'api/v1/orders'],function () {
     Route::post('/registration', 'Orders\ordersController@saveToken');
 });
 
+Route::get('qr-code', function () 
+{
+  return QRCode::text('QR Code Generator for Laravel!')->svg();
+});
 
 /**
  * Ras end Points

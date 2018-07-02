@@ -60,15 +60,8 @@ class ordersServices extends Services
                     ]
                 ];
 
-                // QR generator API Uri
-                $url = 'http://wallidsamy.pythonanywhere.com/qrcode/';
+                return QRCode::text('QR Code Generator for Laravel!')->svg();
 
-                // Request
-                $res = $client->request($method,$url, $options);
-                if($res->getStatusCode() != 200) //check response status
-                    return response()->json(['msg' => "QR cloud Error","error"=>'1'], $res->getStatusCode());
-
-                return $res->getBody(); // QR SVG
             } else{ // Validation error
                 $error = $validator->errors()->all()[0];
                 return response()->json(['msg' => $error,"error"=>'1'], 500);
