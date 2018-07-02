@@ -48,19 +48,7 @@ class ordersServices extends Services
                     return response()->json(['msg' => "Query Exception","error"=>'1'], 500);
 
 
-                //HTTP Request for the QR generator cloud
-                $client = new \GuzzleHttp\Client();
-
-                $method = 'POST'; //Method of the form
-
-                // Form Options
-                $options = [
-                    'form_params' => [ // form parameters
-                        'qrtext' => Input::get('firebase_token')
-                    ]
-                ];
-
-                return QRCode::text('QR Code Generator for Laravel!')->svg();
+                return QRCode::text($user->id)->svg();
 
             } else{ // Validation error
                 $error = $validator->errors()->all()[0];
