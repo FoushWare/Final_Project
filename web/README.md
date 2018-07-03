@@ -205,3 +205,6 @@ API's
               "error":"__ERROR_VALUE__"
             }
             ```
+
+> ##### Get order info
+    - [X] <a>get</a>  /api/v1/orders/__ORDER_ID__?token=TOKEN
