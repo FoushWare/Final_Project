@@ -151,7 +151,6 @@ return [
         /*
          * QR Generator
          */
-        LaravelQRCode\Providers\QRCodeServiceProvider::class,     
 
 
         /*
@@ -162,6 +161,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
         /**
          *  help
@@ -178,7 +178,6 @@ return [
     | This array of class aliases will be registered when this application
     | is started. However, feel free to register as many as you wish as
     | the aliases are "lazy" loaded so they don't hinder performance.
-    |
     */
 
     'aliases' => [
@@ -216,8 +215,7 @@ return [
         'JWTAuth'=>Tymon\JWTAUTH\Facades\JWTAuth::class,
         'FCM'      => LaravelFCM\Facades\FCM::class,
         'FCMGroup' => LaravelFCM\Facades\FCMGroup::class,
-
-        'QRCode' => LaravelQRCode\Facades\QRCode::class   
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
 
     ],
 

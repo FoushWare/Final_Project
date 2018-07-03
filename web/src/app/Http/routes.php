@@ -27,12 +27,30 @@ Route::group(['prefix'=>'api/v1/users'],function (){
 
 Route::group(['prefix'=>'api/v1/orders'],function () {
 // orders
-    Route::post('/registration', 'Orders\ordersController@saveToken');
+//    Route::post('/registration', 'Orders\ordersController@saveToken');
+//
+    Route::post('registration', function ()
+    {
+        $x = new App\Http\Controllers\Orders\ordersController();
+        $order_id = $x->saveToken();
+        if(is_int($order_id)) {
+
+            return QrCode::color(89, 48, 1)->size(300)->generate($order_id);
+
+        }
+        return $order_id;
+
+
+    });
+
+    Route::get('/{id}', 'Orders\ordersController@getOrderItems');
+
+
 });
 
-Route::get('qr-code', function () 
+Route::get('qr-code', function ()
 {
-  return QRCode::text('QR Code Generator for Laravel!')->svg();
+    return QrCode::size(200)->generate('Make me into a QrCode!');
 });
 
 /**
@@ -40,10 +58,14 @@ Route::get('qr-code', function ()
  */
 Route::group(['prefix'=>'/ras'],function () {
 // orders
-    Route::post('in',      'Raspberry\raspberryController@checkIn');
-    Route::post('user',      'Raspberry\raspberryController@user');
-    Route::post('item',    'Raspberry\raspberryController@item');
+    Route::post('in',       'Raspberry\raspberryController@checkIn');
+    Route::post('user',     'Raspberry\raspberryController@user');
+    Route::post('item',     'Raspberry\raspberryController@item');
     Route::post('out',      'Raspberry\raspberryController@checkOut');
+
+    Route::get('user/{id}',      'Raspberry\raspberryController@read');
+    Route::post('user/{id}',      'Raspberry\raspberryController@set');
+
 
 });
 
@@ -76,5 +98,9 @@ Route::group(['prefix' => '','middleware' => 'web'],function (){
 });
 
 //TEST
-Route::get('test','testController@get');
+Route::get('test',function (){
+    //return Hash::make("123");
+    return " dfjkgndfjgn".phpversion();
+});
+
 Route::post('test','testController@post');

@@ -141,6 +141,15 @@ class raspberriesServices extends Services
                 return response()->json($res, 200);
             }
 
+            if ($order->checked == 1){
+                $res = [
+                    'msg' => "Sorry You must check In....",
+                    'error' => 1
+                ];
+
+                return response()->json($res, 200);
+            }
+
             $user  = Users::find($order->user_id);
 
             $item = ItemsModel::where('order_id','=', $order_id)

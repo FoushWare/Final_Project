@@ -48,7 +48,7 @@ class ordersServices extends Services
                     return response()->json(['msg' => "Query Exception","error"=>'1'], 500);
 
 
-                return QRCode::text($user->id)->svg();
+                return $user->id;
 
             } else{ // Validation error
                 $error = $validator->errors()->all()[0];

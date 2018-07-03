@@ -28,7 +28,7 @@ class ordersRepositories extends Repositories {
         $client = Users::find($uid);
         $client->remember_token = $firebaseToken;
         try {
-            return $this->checkFireBaseToken($firebaseToken) && $client->save();
+            return $client->save();
         } catch (QueryException $e){
             return false;
         }
